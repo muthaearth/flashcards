@@ -21,12 +21,12 @@ class Deck(models.Model):
         return self.name
 
     def get_cards_num(self):
-        cards = Flashcard.objects.get_cards_to_study(
+        cards = FlashCard.objects.get_cards_to_study(
             user=self.owner, deck_id=self.id, days=0)
         return len(cards)
 
 
-class FlashcardManager(models.Manager):
+class FlashCardManager(models.Manager):
     def create_flashcard(self, user, question, answer, deck_name):
         try:
             deck = Deck.objects.get(owner=user, name=deck_name)
@@ -41,12 +41,12 @@ class FlashcardManager(models.Manager):
     def get_cards_to_study(self, user, deck_id, days):
         ##import ipdb; ipdb.set_trace()
         next_due_date = timezone.now() + timedelta(days=days)
-        cards = Flashcard.objects.filter(deck__id=deck_id, deck__owner=user,
+        cards = FlashCard.objects.filter(deck__id=deck_id, deck__owner=user,
                                          next_due_date__lte=next_due_date)
         return cards
 
 
-class Flashcard(models.Model):
+class FlashCard(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
     question = models.TextField()
@@ -59,7 +59,7 @@ class Flashcard(models.Model):
     easiness = models.FloatField(default=2.5)
     consec_correct_answers = models.IntegerField(default=0)
 
-    objects = FlashcardManager()
+    objects = FlashCardManager()
 
     def __str__(self):
         return self.question
@@ -102,7 +102,7 @@ class Flashcard(models.Model):
             self.easiness = result[1]
             self.consec_correct_answers = result[2]
         # Call the "real" save() method.
-        super(Flashcard, self).save(*args, **kwargs)
+        super(FlashCard, self).save(*args, **kwargs)
 
 
 @receiver(post_save, sender=User)

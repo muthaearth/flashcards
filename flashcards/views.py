@@ -11,8 +11,8 @@ from rest_framework.response import Response
 import random
 import json
 
-from .models import Deck, Flashcard
-from .serializers import DeckSerializer, FlashcardSerializer
+from .models import Deck, FlashCard
+from .serializers import DeckSerializer, FlashCardSerializer
 from .forms import CardForm
 
 
@@ -30,7 +30,7 @@ def home(request):
         return render(request, 'flashcards/index.html', context)
 
 
-class Deckview(viewsets.ModelViewSet):
+class DeckView(viewsets.ModelViewSet):
     """
     Handles routing for POST, PATCH, GET, DELETE
     """
@@ -38,20 +38,20 @@ class Deckview(viewsets.ModelViewSet):
     serializer_class = DeckSerializer
 
 
-class Flashcardview(viewsets.ModelViewSet):
+class FlashCardView(viewsets.ModelViewSet):
     """
     Handles routing for POST, PATCH, GET, DELETE
     """
-    queryset = Flashcard.objects.all()
-    serializer_class = FlashcardSerializer
+    queryset = FlashCard.objects.all()
+    serializer_class = FlashCardSerializer
 
 
-# def profile(request):
-#     """
-#     ...
-#     """
-#     if request.method == 'GET':
-#         pass
+def profile(request):
+    """
+    ...
+    """
+    if request.method == 'GET':
+        pass
 
 # def about(request):
 #     """

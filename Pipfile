@@ -11,6 +11,7 @@ werkzeug = "*"
 django-environ = "*"
 django-registration = "*"
 djangorestframework = "*"
+django-registration-redux = "*"
 
 [requires]
 python_version = "3.7"

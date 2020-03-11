@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'registration',
     'rest_framework',
     'rest_framework.authtoken',
-    'bootstrap3',
 
     # Project-specific
     'flashcards',

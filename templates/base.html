@@ -1,4 +1,4 @@
-{% load static from staticfiles %}
+{% load static from static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +8,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link href="{% static "flashcards/flashcards.css" %}" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900" rel="stylesheet" type="text/css">
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
   </head>
 
 <body>
@@ -26,15 +26,15 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class=""><a href="{% url 'home' %}">Decks</a></li>
-            <li><a href="{% url 'add-card' %}">Add</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
+            {% comment %} <li><a href="{% url 'add' %}">Add</a></li> {% endcomment %}
+            {% comment %} <li><a href="{% url 'about' %}">About</a></li> {% endcomment %}
           </ul>
           {% block nav_user %}
             {% if user.is_authenticated %}
               <ul class="nav navbar-nav navbar-right">
-                <li id="nav-username"><a href="{% url 'flashcards.views.profile' %}">
+                {% comment %} <li id="nav-username"><a href="{% url 'flashcards.views.profile' %}">
                   <span class="glyphicon glyphicon-user"></span>  {{ user.get_username }} &nbsp; </a>
-                </li>
+                </li> {% endcomment %}
                 <li>
                   <a href="{% url 'logout' %}?next=/accounts/login/">Sign out</a>
                 </li>
@@ -62,12 +62,11 @@
 	<div class="container">
 	  <footer>
 		<hr />
-		<p>Momentum Learning Flashcard Application</p>
+		<p>My Flashcard Application</p>
 	  </footer>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  {% comment %} <script src="{% static "js/bootstrap.min.js" %}"></script> {% endcomment %}
   {% block javascript %}{% endblock %}
 </body>
 </html>

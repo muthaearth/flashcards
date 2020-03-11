@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Deck, Flashcard, FlashcardManager
+from .models import Deck, FlashCard, FlashCardManager
 
 
 class DeckSerializer(serializers.ModelSerializer):
@@ -8,9 +8,9 @@ class DeckSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class FlashcardSerializer(serializers.ModelSerializer):
+class FlashCardSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Flashcard
+        model = FlashCard
         fields = ('id', 'question', 'answer',
                   'easiness', 'consec_correct_answers')
         # list or tuple of field names that do not need to be updated on the card
@@ -18,8 +18,8 @@ class FlashcardSerializer(serializers.ModelSerializer):
 
 
 # attributes of serialized objects saved when updated
-class FlashcardManagerSerializer(serializers.Serializer):
-    model = FlashcardManager
+class FlashCardManagerSerializer(serializers.Serializer):
+    model = FlashCardManager
     rating = serializers.IntegerField(
         write_only=True, min_value=0, max_value=5)
     easiness = serializers.FloatField(read_only=True)
