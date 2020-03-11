@@ -80,7 +80,7 @@ class Flashcard(models.Model):
             next_due_date,easiness,consec_correct_answers (tuple) - information
                 to update Flashcard data
         """
-        # user gives themself a performance rating after review of item
+        # user does self-eval after review of item
         correct = (rating >= 3)
         blank = (rating < 2)
         # performance rating calc
