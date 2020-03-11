@@ -1,24 +1,14 @@
 from rest_framework import serializers
-from .models import Deck, Flashcard
-
-""" Django rest_framework serializers https://www.django-rest-framework.org/api-guide/serializers/#modelserializer
-
-Data within 'Deck' and 'Flashcard' querysets and model instances will be converted to python datatypes and then rendered into JSON
-
-Example:
-DeckSerializer.base_fields['description'] = DeckSerializer(many=True, allow_add_remove=True)
-
-CardSerializer.base_fields['answer'] = CardSerializer(many=True, allow_add_remove=True)
-"""
+from .models import Deck, Flashcard, FlashcardManager
 
 
 class DeckSerializer(serializers.ModelSerializer):
     class Meta:
         model = Deck
-        fields = ('id', 'name', 'description')
+        fields = '__all__'
 
 
-class CardSerializer(serializers.ModelSerializer):
+class FlashcardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Flashcard
         fields = ('id', 'question', 'answer',
@@ -28,7 +18,8 @@ class CardSerializer(serializers.ModelSerializer):
 
 
 # attributes of serialized objects saved when updated
-class RatingSerializer(serializers.Serializer):
+class FlashcardManagerSerializer(serializers.Serializer):
+    model = FlashcardManager
     rating = serializers.IntegerField(
         write_only=True, min_value=0, max_value=5)
     easiness = serializers.FloatField(read_only=True)

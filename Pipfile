@@ -10,6 +10,7 @@ django-debug-toolbar = "*"
 werkzeug = "*"
 django-environ = "*"
 django-registration = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"

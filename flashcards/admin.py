@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import Deck
+from .models import Deck, FlashcardManager, Flashcard
 
 
 class DeckAdmin(admin.ModelAdmin):
