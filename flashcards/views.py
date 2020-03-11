@@ -11,8 +11,8 @@ from rest_framework.response import Response
 import random
 import json
 
-from .models import Deck, Flashcard, FlashcardManager
-from .serializers import DeckSerializer, FlashcardSerializer, FlashcardManagerSerializer
+from .models import Deck, Flashcard
+from .serializers import DeckSerializer, FlashcardSerializer
 from .forms import CardForm
 
 
@@ -44,14 +44,6 @@ class Flashcardview(viewsets.ModelViewSet):
     """
     queryset = Flashcard.objects.all()
     serializer_class = FlashcardSerializer
-
-
-class FlashcardManagerview(viewsets.ModelViewSet):
-    """
-    Handles routing for POST, PATCH, GET, DELETE
-    """
-    queryset = FlashcardManager.objects.all()
-    serializer_class = FlashcardManagerSerializer
 
 
 # def profile(request):

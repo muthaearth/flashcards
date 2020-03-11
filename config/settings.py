@@ -37,7 +37,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,13 +50,11 @@ INSTALLED_APPS = [
     'registration',
     'rest_framework',
     'rest_framework.authtoken',
-    'bootstrap3'
+    'bootstrap3',
 
     # Project-specific
-    'api',
     'flashcards',
-    # 'users',
-    # 'tracker',
+
 ]
 
 MIDDLEWARE = [
@@ -137,7 +134,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = str(APPS_DIR('media'))
+MEDIA_ROOT = BASE_DIR / 'media'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -148,10 +145,6 @@ REST_FRAMEWORK = {
     ],
     'PAGE_SIZE': 10
 }
-
-# Custom user model
-
-AUTH_USER_MODEL = 'users.User'
 
 # Debug toolbar config
 

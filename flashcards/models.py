@@ -11,12 +11,6 @@ from rest_framework.authtoken.models import Token
 
 from datetime import timedelta
 
-# # Consider creating a custom user model from scratch as detailed at
-# # https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#specifying-a-custom-user-model
-
-
-# class User(AbstractUser):
-#     pass
 
 class Deck(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
