@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Flashcard Home{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+       <div class="col-sm-1 col-xs-1" id="buttons">
+         <button type="button" class="btn btn-default">Edit</button>
+       </div>
+       <div class="col-sm-1 col-sm-offset-10 col-xs-1 col-xs-offset-10" id="status">
+       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 text-center" style="min-height: 300px">
+         <div id="question"></div>
+         <div id="answer"><hr></div>
+       </div>
+    </div>
+
+    <div class="row">
+       <div class="col-sm-12 text-center" id="result-row">
+       </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+{% load static %}
+<script src="{% static "flashcards/study.js" %}"></script>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% comment %} {% load bootstrap3 %} {% endcomment %}
+
+{% block title %}Flashcard Home{% endblock %}
+{% block content %}
+<div class="container">
+     <h1>Decks</h1>
+        {% for deck in decks %}
+           <div class="row deck-row">
+              <div class="col-sm-8 col-xs-7">
+                  <a href="{% url "study" deck.id %}">{{ deck.name }}</a>
+              </div>
+              <div class="col-sm-1 col-xs-1">
+                {{ deck.get_cards_num }}
+              </div>
+              <div class="col-sm-1 col-xs-1">
+                 <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      Action
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#">Rename</a></li>
+                      <li><a href="#" onclick="deleteHandler(this, {{ deck.id }});">Delete</a></li>
+                    </ul>
+                  </div>
+              </div>
+           </div>
+          {% endfor %}
+</div>
+
+{% endblock %}
+{% block javascript %}
+{% load static %}
+<script src="{% static "flashcards/decks.js" %}"></script>
+{% endblock %}
+
