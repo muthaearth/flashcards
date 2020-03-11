@@ -92,7 +92,7 @@ def get_cards(request, deck_id):
             idx = random.sample(range(count), num)
             for i in idx:
                 card = cards[i]
-                # split question into a word list to on new line
+                # split question into a word list on new line
                 question = '<p>' + \
                     '</p><p>'.join(card.question.split('\r\n'))+'</p>'
                 answer = '<p>'+'</p><p>'.join(card.answer.split('\r\n'))+'</p>'
