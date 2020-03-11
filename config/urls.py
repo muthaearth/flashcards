@@ -22,7 +22,6 @@ from flashcards import views as flashcards_views
 urlpatterns = [
     path('', flashcards_views.home, name="home"),
     path('', include('flashcards.urls')),
-    # path('flashcard/', include('flashcards.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
