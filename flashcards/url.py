@@ -1,8 +1,10 @@
 from django.conf.urls import url
-from api import views as api_views
+from . import views
 from rest_framework.authtoken import views
 
 
+router = routers.Defaultrouter()
+router.register('card', views.Cardview)
 urlpatterns = [
     path('decks/$', api_views.decks_list, name='decks-list'),
     path('decks/(?P<deck_id>[0-9]+)/$',
