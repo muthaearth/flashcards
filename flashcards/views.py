@@ -16,17 +16,6 @@ import random
 # CARD_LIMIT = 5
 
 
-@login_required
-def home(request):
-    """
-    App home page
-    """
-    if request.method == 'GET':
-        decks = Deck.objects.filter(owner=request.user)
-        context = {'user': request.user, 'decks': decks}
-        return render(request, 'flashcards/index.html', context)
-
-
 class DeckView(viewsets.ModelViewSet):
     """
     Handles routing for POST, PATCH, GET, DELETE
@@ -42,6 +31,15 @@ class FlashCardView(viewsets.ModelViewSet):
     queryset = FlashCard.objects.all()
     serializer_class = FlashCardSerializer
 
+
+def home(request):
+    """
+    App home page
+    """
+    if request.method == 'GET':
+        decks = Deck.objects.filter(owner=request.user)
+        context = {'user': request.user, 'decks': decks}
+        return render(request, 'flashcards/index.html', context)
 
 # def profile(request):
 #     """
