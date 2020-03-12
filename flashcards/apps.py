@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class FlashcardsConfig(AppConfig):
+class FlashCardsConfig(AppConfig):
     name = 'flashcards'

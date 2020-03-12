@@ -1,22 +1,19 @@
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.urls import reverse
-from django.http import HttpResponseRedirect, JsonResponse
-from django.utils import timezone
-from django.core.exceptions import ObjectDoesNotExist
-from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
-from rest_framework import routers, status, viewsets
+from rest_framework import viewsets, routers, status
 from rest_framework.response import Response
-
-import random
-import json
-
 from .models import Deck, FlashCard
 from .serializers import DeckSerializer, FlashCardSerializer
-from .forms import CardForm
+from django.http import JsonResponse, HttpResponseRedirect
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
+from django.core.exceptions import ObjectDoesNotExist
+from django.urls import reverse
+from django.utils import timezone
+import json
+import random
 
 
-CARD_LIMIT = 5
+# CARD_LIMIT = 5
 
 
 @login_required
@@ -46,12 +43,12 @@ class FlashCardView(viewsets.ModelViewSet):
     serializer_class = FlashCardSerializer
 
 
-def profile(request):
-    """
-    ...
-    """
-    if request.method == 'GET':
-        pass
+# def profile(request):
+#     """
+#     ...
+#     """
+#     if request.method == 'GET':
+#         pass
 
 # def about(request):
 #     """

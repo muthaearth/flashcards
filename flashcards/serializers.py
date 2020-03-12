@@ -11,9 +11,9 @@ class DeckSerializer(serializers.ModelSerializer):
 class FlashCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = FlashCard
-        fields = ('id', 'question', 'answer',
-                  'easiness', 'consec_correct_answers')
-        # list or tuple of field names that do not need to be updated on the card
+        fields = ('id', 'deck_name', 'question', 'answer',
+                  'difficulty_level', 'consec_correct_answers')
+        # list or tuple field names that do not need to be updated on the card
         read_only_fields = ('created_at', 'last_shown_at', 'next_due_date')
 
 
@@ -22,7 +22,7 @@ class FlashCardManagerSerializer(serializers.Serializer):
     model = FlashCardManager
     rating = serializers.IntegerField(
         write_only=True, min_value=0, max_value=5)
-    easiness = serializers.FloatField(read_only=True)
+    difficulty_level = serializers.FloatField(read_only=True)
     card_created_at = serializers.IntegerField(read_only=True)
     last_shown_at = serializers.DateTimeField(read_only=True)
     next_due_date = serializers.DateTimeField(read_only=True)

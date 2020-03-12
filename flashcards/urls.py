@@ -1,17 +1,18 @@
-from django.urls import path, include
+from django.urls import include, path
 from . import views
-# from rest_framework.authtoken import views
 from rest_framework import routers
 
 
 router = routers.DefaultRouter()
 router.register('deck', views.DeckView)
-router.register('flashcards', views.FlashCardView)
+router.register('flashards', views.FlashCardView)
 
 
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+
 # urlpatterns = [
 #     path('decks/$', api_views.decks_list, name='decks-list'),
 #     path('decks/(?P<deck_id>[0-9]+)/$',

@@ -1,35 +1,31 @@
-{% extends "base.html" %}
-{% comment %} {% load bootstrap3 %} {% endcomment %}
+{% extends 'base.html' %}
 
-{% block title %}Flashcard Home{% endblock %}
 {% block content %}
-<div class="container">
-     <h1>Decks</h1>
-        {% for deck in decks %}
-           <div class="row deck-row">
-              <div class="col-sm-8 col-xs-7">
-                  <a href="{% url "study" deck.id %}">{{ deck.name }}</a>
-              </div>
-              <div class="col-sm-1 col-xs-1">
-                {{ deck.get_cards_num }}
-              </div>
-              <div class="col-sm-1 col-xs-1">
-                 <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Action
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#">Rename</a></li>
-                      <li><a href="#" onclick="deleteHandler(this, {{ deck.id }});">Delete</a></li>
-                    </ul>
-                  </div>
-              </div>
-           </div>
-          {% endfor %}
+<div class='shadow'>
+<header class='header'>
+    <h1 class='title'>Name Flashcard App</h1>
+    <h3 class='sub-title'>blurb</h3>
+</header>
+<nav class='nav'>
+    <ul class='nav-list'>
+        <li class='nav-item'><a href="">Select This</a></li>
+        <li class='nav-item'><a href="">Choose That</a></li>
+        <li class='nav-item'><a href="">New This, That</a></li>
+        <li class='nav-item'><a href="">New Another</a></li>
+    </ul>
+</nav>
 </div>
-
+<div class='col'>
+    <p class='col-heading'>Review Something</p>
+    {% for card in cards %}
+    <div id={{card.pk}} class="col-item">
+        <p class='prev1'>{{card.title}}</p>
+        <p class='prev2'>{{card.subject}}</p>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
+
 {% block javascript %}
 {% load static %}
 <script src="{% static "flashcards/decks.js" %}"></script>

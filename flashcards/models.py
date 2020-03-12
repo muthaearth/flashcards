@@ -1,21 +1,20 @@
+from django.contrib.auth import get_user_model
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.models import User
-from django.utils import timezone
 from django.db.models.signals import post_save
+from users.models import User
+from PIL import Image, ImageFilter
+from model_utils.managers import InheritanceManager
+from django.utils import timezone
 from django.dispatch import receiver
 from django.core.exceptions import ObjectDoesNotExist
-
-# Select from list of available Python interpreters for current project.
-from rest_framework.authtoken.models import Token
-
 from datetime import timedelta
+from rest_framework.authtoken.models import Token
 
 
 class Deck(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    description = models.TextField(default='')
+    description = models.TextField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -27,7 +26,7 @@ class Deck(models.Model):
 
 
 class FlashCardManager(models.Manager):
-    def create_flashcard(self, user, question, answer, deck_name):
+    def create_flashcard(self, user, deck_name, question, answer, image, difficulty_level):
         try:
             deck = Deck.objects.get(owner=user, name=deck_name)
         except ObjectDoesNotExist:
@@ -49,14 +48,15 @@ class FlashCardManager(models.Manager):
 class FlashCard(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
-    question = models.TextField()
-    answer = models.TextField()
+    # cards = models.ManyToManyField(FlashCard, related_name='decks')
+    question = models.TextField(max_length=100, blank=True, null=True)
+    answer = models.TextField(max_length=100, blank=True, null=True)
+    image = models.FileField(upload_to='images', null=True, verbose_name=None)
     created_at = models.DateTimeField(auto_now_add=True)
     last_shown_at = models.DateTimeField(auto_now_add=True)
     # items past due date queued for review by user
     next_due_date = models.DateTimeField(default=timezone.now)
-    # how easy question is
-    easiness = models.FloatField(default=2.5)
+    difficulty_level = models.FloatField(default=2.5)
     consec_correct_answers = models.IntegerField(default=0)
 
     objects = FlashCardManager()
@@ -68,23 +68,23 @@ class FlashCard(models.Model):
         """ Supermemo-2 algorithm realization.
         http://www.blueraja.com/blog/477/a-better-spaced-repetition-learning-algorithm-sm2
         Args:
-            easiness (int) - answer rating (0=worst, 5=best)
+            difficulty_level (int) - answer rating (0=worst, 5=best)
 
         Returns:
-            next_due_date,easiness,consec_correct_answers (tuple) - information
+            next_due_date,difficulty_level,consec_correct_answers (tuple) - information
                 to update Flashcard data
         """
         # user does self-eval after review of item
         correct = (rating >= 3)
         blank = (rating < 2)
         # performance rating calc
-        easiness = self.easiness - 0.8 + 0.28*rating + 0.02*rating**2
-        if easiness < 1.3:
-            easiness = 1.3
+        difficulty_level = self.difficulty_level - 0.8 + 0.28*rating + 0.02*rating**2
+        if difficulty_level < 1.3:
+            difficulty_level = 1.3
         if correct:
             consec_correct_answers = self.consec_correct_answers + 1
             # next_due_date to review item
-            interval = 6*easiness**(consec_correct_answers-1)
+            interval = 6*difficulty_level**(consec_correct_answers-1)
         elif blank:
             consec_correct_answers = 0
             interval = 0
@@ -93,13 +93,13 @@ class FlashCard(models.Model):
             interval = 1
 
         next_due_date = timezone.now() + timedelta(days=interval)
-        return next_due_date, easiness, consec_correct_answers
+        return next_due_date, difficulty_level, consec_correct_answers
 
     def save(self, rating=None, *args, **kwargs):
         if rating:
             result = self.get_next_due_date(rating)
             self.next_due_date = result[0]
-            self.easiness = result[1]
+            self.difficulty_level = result[1]
             self.consec_correct_answers = result[2]
         # Call the "real" save() method.
         super(FlashCard, self).save(*args, **kwargs)
