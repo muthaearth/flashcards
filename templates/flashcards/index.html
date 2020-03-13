@@ -8,19 +8,19 @@
 </header>
 <nav class='nav'>
     <ul class='nav-list'>
-        <li class='nav-item'><a href="">Select This</a></li>
-        <li class='nav-item'><a href="">Choose That</a></li>
-        <li class='nav-item'><a href="">New This, That</a></li>
-        <li class='nav-item'><a href="">New Another</a></li>
+        <li class='nav-item'><a href="">Select Deck</a></li>
+        <li class='nav-item'><a href="">Choose Card</a></li>
+        <li class='nav-item'><a href="">New Deck</a></li>
+        <li class='nav-item'><a href="">New Card</a></li>
     </ul>
 </nav>
 </div>
 <div class='col'>
     <p class='col-heading'>Review Something</p>
-    {% for card in cards %}
-    <div id={{card.pk}} class="col-item">
-        <p class='prev1'>{{card.title}}</p>
-        <p class='prev2'>{{card.subject}}</p>
+    {% for deck in decks %}
+    <div id={{deck.pk}} class="col-item">
+        <p class='prev1'>{{deck.name}}</p>
+        <p class='prev2'>{{deck.description}}</p>
     </div>
     {% endfor %}
 </div>

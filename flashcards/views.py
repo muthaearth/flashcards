@@ -5,6 +5,7 @@ from .models import Deck, FlashCard
 from .serializers import DeckSerializer, FlashCardSerializer
 from django.http import JsonResponse, HttpResponseRedirect
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from django.core.exceptions import ObjectDoesNotExist
 from django.urls import reverse
@@ -32,6 +33,7 @@ class FlashCardView(viewsets.ModelViewSet):
     serializer_class = FlashCardSerializer
 
 
+@login_required
 def home(request):
     """
     App home page

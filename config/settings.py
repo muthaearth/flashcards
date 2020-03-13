@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flashcards',
 
     # Third-party
     'debug_toolbar',
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
 
     # Project-specific
     'users',
+    'flashcards',
 ]
 
 MIDDLEWARE = [
