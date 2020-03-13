@@ -8,40 +8,6 @@ from django.utils import timezone
 from django.core.exceptions import ObjectDoesNotExist
 
 
-class Deck(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100, blank=True, null=True)
-    description = models.ManyToManyField(FlashCard, related_name='decks')
-
-    def __str__(self):
-        return self.name
-
-    def get_cards_num(self):
-        cards = FlashCard.objects.get_cards_to_study(
-            user=self.owner, deck_id=self.id, days=0)
-        return len(cards)
-
-
-class FlashCardManager(models.Manager):
-    def create_flashcard(self, user, deck_name, question, answer, difficulty_level):
-        try:
-            deck = Deck.objects.get(owner=user, name=deck_name)
-        except ObjectDoesNotExist:
-            deck = Deck(owner=user, name=deck_name)
-            deck.save()
-
-        self.create(owner=user, question=question, answer=answer,
-                    deck=deck)
-        return deck
-
-    def get_cards_to_study(self, user, deck_id, days):
-        ##import ipdb; ipdb.set_trace()
-        next_due_date = timezone.now() + timedelta(days=days)
-        cards = FlashCard.objects.filter(deck__id=deck_id, deck__owner=user,
-                                         next_due_date__lte=next_due_date)
-        return cards
-
-
 class FlashCard(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
@@ -99,6 +65,41 @@ class FlashCard(models.Model):
             self.consec_correct_answers = result[2]
         # Call the "real" save() method.
         super(FlashCard, self).save(*args, **kwargs)
+
+
+class Deck(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    description = models.ManyToManyField(FlashCard, related_name='decks')
+    # description = models.TextField(default='')
+
+    def __str__(self):
+        return self.name
+
+    def get_cards_num(self):
+        cards = Flashcard.objects.get_cards_to_study(
+            user=self.owner, deck_id=self.id, days=0)
+        return len(cards)
+
+
+class FlashCardManager(models.Manager):
+    def create_flashcard(self, user, deck_name, question, answer, difficulty_level):
+        try:
+            deck = Deck.objects.get(owner=user, name=deck_name)
+        except ObjectDoesNotExist:
+            deck = Deck(owner=user, name=deck_name)
+            deck.save()
+
+        self.create(owner=user, question=question, answer=answer,
+                    deck=deck)
+        return deck
+
+    def get_cards_to_study(self, user, deck_id, days):
+        ##import ipdb; ipdb.set_trace()
+        next_due_date = timezone.now() + timedelta(days=days)
+        cards = FlashCard.objects.filter(deck__id=deck_id, deck__owner=user,
+                                         next_due_date__lte=next_due_date)
+        return cards
 
 
 @receiver(post_save, sender=User)

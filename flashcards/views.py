@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets, routers, status
 from rest_framework.response import Response
-from .models import Deck, FlashCard
+from .models import FlashCard, Deck
 from .serializers import DeckSerializer, FlashCardSerializer
 from django.http import JsonResponse, HttpResponseRedirect
 from django.views.decorators.http import require_POST

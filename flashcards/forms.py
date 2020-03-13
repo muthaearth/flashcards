@@ -1,6 +1,6 @@
 import datetime
 from django.forms import ModelForm
-from .models import Deck, CardForm, FlashCard
+from .models import FlashCard, Deck, CardForm
 from django.utils.translation import ugettext_lazy as _
 
 # ModelForm: https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/

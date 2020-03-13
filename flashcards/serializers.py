@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Deck, FlashCard, FlashCardManager
+from .models import FlashCard, FlashCardManager, Deck
 
 
 class DeckSerializer(serializers.ModelSerializer):
