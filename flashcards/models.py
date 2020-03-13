@@ -1,19 +1,17 @@
+from datetime import timedelta
+from django.dispatch import receiver
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.db.models.signals import post_save
 from users.models import User
-from PIL import Image, ImageFilter
 from django.utils import timezone
-from django.dispatch import receiver
 from django.core.exceptions import ObjectDoesNotExist
-from datetime import timedelta
-from rest_framework.authtoken.models import Token
 
 
 class Deck(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
-    description = models.TextField(max_length=100, blank=True, null=True)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    description = models.ManyToManyField(FlashCard, related_name='decks')
 
     def __str__(self):
         return self.name
@@ -25,7 +23,7 @@ class Deck(models.Model):
 
 
 class FlashCardManager(models.Manager):
-    def create_flashcard(self, user, deck_name, question, answer, image, difficulty_level):
+    def create_flashcard(self, user, deck_name, question, answer, difficulty_level):
         try:
             deck = Deck.objects.get(owner=user, name=deck_name)
         except ObjectDoesNotExist:
@@ -50,7 +48,6 @@ class FlashCard(models.Model):
     # cards = models.ManyToManyField(FlashCard, related_name='decks')
     question = models.TextField(max_length=100, blank=True, null=True)
     answer = models.TextField(max_length=100, blank=True, null=True)
-    image = models.FileField(upload_to='images', null=True, verbose_name=None)
     created_at = models.DateTimeField(auto_now_add=True)
     last_shown_at = models.DateTimeField(auto_now_add=True)
     # items past due date queued for review by user
