@@ -9,7 +9,7 @@
 
     <div class="flex-grid">
     {% for deck in decks %}
-        <a class="deck-box" href="#">
+        <a class="deck-box" href="{% url 'flashcard_index' deck.slug %}">
             <p class="title">{{ deck.name }}</p>
             <p class="description">{{ deck.description }}</p>
         </a>

@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from django.core.exceptions import ObjectDoesNotExist
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.text import slugify
 import json
 import random
 
@@ -42,9 +43,28 @@ def home(request):
     if request.method == 'GET':
         # decks = Deck.objects.filter(owner=request.user)
         decks = Deck.objects.all()
-        cards = FlashCard.objects.all()
-        context = {'user': request.user, 'decks': decks, 'cards': cards}
+
+        context = {
+            'user': request.user,
+            'decks': decks,
+        }
         return render(request, 'flashcards/index.html', context)
+
+
+def flashcard_index(request, deck_slug):
+
+    decks = Deck.objects
+
+    for deck in decks.all():
+        if slugify(deck.name) == deck_slug:
+            instance = deck
+            break
+
+    context = {
+        'deck': instance,
+    }
+
+    return render(request, 'flashcards/flashcard_index.html', context)
 
 
 @csrf_exempt

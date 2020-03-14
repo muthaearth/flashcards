@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="flashcard_index">
+<ul>
+{% for card in deck.flashcards.all %}
+<li>{{ card.question }}</li>
+{% endfor %}
+</ul>
+<div>
+{% endblock %}

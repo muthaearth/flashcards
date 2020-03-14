@@ -3,13 +3,16 @@ from . import views
 from rest_framework import routers
 
 
-router = routers.DefaultRouter()
-router.register('deck', views.DeckView)
-router.register('flashards', views.FlashCardView)
+# router = routers.DefaultRouter()
+# router.register('deck', views.DeckView)
+# router.register('flashards', views.FlashCardView)
 
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # path('', include(router.urls)),
+    path('', views.home, name="home"),
+    path('<slug:deck_slug>/flash-cards/',
+         views.flashcard_index, name='flashcard_index')
 ]
 
 

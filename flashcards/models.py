@@ -8,21 +8,7 @@ from rest_framework.authtoken.models import Token
 from datetime import timedelta
 from django.contrib.auth import get_user_model
 from users.models import User
-
-
-class Deck(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
-    description = models.TextField(default='')
-    flashcards = models.ManyToManyField(FlashCard)
-
-    def __str__(self):
-        return self.name
-
-    def get_cards_num(self):
-        cards = FlashCard.objects.get_cards_to_study(
-            user=self.owner, deck_id=self.id, days=0)
-        return len(cards)
+from django.utils.text import slugify
 
 
 class FlashCardManager(models.Manager):
@@ -47,7 +33,7 @@ class FlashCardManager(models.Manager):
 
 class FlashCard(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
+    # deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
     question = models.TextField(max_length=255, blank=True, null=True)
     answer = models.TextField(max_length=255, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -98,6 +84,26 @@ class FlashCard(models.Model):
             self.consec_correct_answers = result[2]
         # Call the "real" save() method.
         super(FlashCard, self).save(*args, **kwargs)
+
+
+class Deck(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    description = models.TextField(default='')
+    flashcards = models.ManyToManyField(FlashCard)
+
+    def __str__(self):
+        return self.name
+
+    def get_cards_num(self):
+        cards = FlashCard.objects.get_cards_to_study(
+            user=self.owner, deck_id=self.id, days=0)
+        return len(cards)
+
+    @property
+    def slug(self):
+        # Service.objects.filter(title=self.title).exists()
+        return slugify(self.name)
 
 
 @receiver(post_save, sender=User)
