@@ -47,8 +47,8 @@ class FlashCardManager(models.Manager):
 class FlashCard(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
-    question = models.TextField(max_length=100, blank=True, null=True)
-    answer = models.TextField(max_length=100, blank=True, null=True)
+    question = models.TextField(max_length=255, blank=True, null=True)
+    answer = models.TextField(max_length=255, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_shown_at = models.DateTimeField(auto_now_add=True)
     next_due_date = models.DateTimeField(default=timezone.now)
