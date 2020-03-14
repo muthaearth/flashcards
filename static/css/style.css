@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro";
+}
+
+a {
+  text-decoration: none;
+  color: #12922c;
+}
+
+.home h1 {
+  font-size: 50px;
+  font-family: Montserrat;
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+.flex-grid {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-box {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 0 5px grey;
+  margin: 0 10px 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  text-align: center;
+  height: 400px;
+  width: 300px;
+}
+
+.deck-box:hover {
+  box-shadow: 0 0 5px #12922c;
+}
+
+.deck-box .title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.deck-box .description {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+}
