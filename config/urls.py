@@ -7,9 +7,9 @@ from flashcards import views as flashcard_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', flashcard_views.homepage, name='home'),
+    path('', flashcard_views.home, name='home'),
     path('api/', include('flashcards.urls')),
-    path('new_card/', flashcard_views.new_card, name='new_card'),
+    # path('new_card/', flashcard_views.new_card, name='new_card'),
     path('accounts/', include('registration.backends.default.urls')),
 ]
 

@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flashcards',
 
     # Third-party
     'debug_toolbar',
@@ -143,12 +142,12 @@ LOGIN_REDIRECT_URL = '/'
 ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-REST_FRAMEWORK = {
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'rest_framework.authentication.BasicAuthentication',
-    #     'rest_framework.authentication.SessionAuthentication',
-    # ],
-    'DEFAULT_PERMISSIONS_CLASSES': {
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    }
-}
+# REST_FRAMEWORK = {
+#     # 'DEFAULT_AUTHENTICATION_CLASSES': [
+#     #     'rest_framework.authentication.BasicAuthentication',
+#     #     'rest_framework.authentication.SessionAuthentication',
+#     # ],
+#     'DEFAULT_PERMISSIONS_CLASSES': {
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     }
+# }
