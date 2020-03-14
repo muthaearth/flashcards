@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .models import Deck, FlashCard
 from .serializers import DeckSerializer, FlashCardSerializer
 from django.http import JsonResponse, HttpResponseRedirect
+from rest_framework.parsers import JSONParser
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
@@ -39,23 +40,27 @@ def home(request):
     App home page
     """
     if request.method == 'GET':
-        decks = Deck.objects.filter(owner=request.user)
-        context = {'user': request.user, 'decks': decks}
+        # decks = Deck.objects.filter(owner=request.user)
+        decks = Deck.objects.all()
+        cards = FlashCard.objects.all()
+        context = {'user': request.user, 'decks': decks, 'cards': cards}
         return render(request, 'flashcards/index.html', context)
 
-# def profile(request):
-#     """
-#     ...
-#     """
-#     if request.method == 'GET':
-#         pass
 
-# def about(request):
-#     """
-#     ...
-#     """
-#     if request.method == 'GET':
-#         return render(request, 'flashcards/about.html')
+@csrf_exempt
+def new_card(request):
+    """
+    Create new card
+    """
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = FlashCardSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+    else:
+        return
 
     # def add(request):
     #     """

@@ -1,29 +1,81 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block meta %}
+<script src="{% static 'js/home.js' %}" defer></script>
+{% endblock %}
 {% block content %}
 <div class='shadow'>
 <header class='header'>
-    <h1 class='title'>Name Flashcard App</h1>
-    <h3 class='sub-title'>blurb</h3>
+    <p class='title'>MLC7 Flashcards</p>
 </header>
 <nav class='nav'>
     <ul class='nav-list'>
-        <li class='nav-item'><a href="">Select Deck</a></li>
-        <li class='nav-item'><a href="">Choose Card</a></li>
+        <li class='nav-item'><a href="">Quiz</a></li>
         <li class='nav-item'><a href="">New Deck</a></li>
-        <li class='nav-item'><a href="">New Card</a></li>
     </ul>
 </nav>
 </div>
-<div class='col'>
-    <p class='col-heading'>Review Something</p>
-    {% for deck in decks %}
-    <div id={{deck.pk}} class="col-item">
-        <p class='prev1'>{{deck.name}}</p>
-        <p class='prev2'>{{deck.description}}</p>
+<main class='main row'>
+    <div class='col'>
+        <p data-stuff='col1' class='col-heading'>Select a MLC7 Deck</p>
+        <div id='col1' class='col-container dn'>
+            {% for deck in decks %}
+            <div id={{deck.pk}} class="col-item">
+                <p class='prev1'>{{deck.name}}</p>
+                <p class='prev2'>{{deck.description}}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
-</div>
+    <div class='col mid'>
+        <p data-stuff='col2' class='col-heading'>My MLC7 Decks</p>
+        <div id='col2' class='col-container dn'>
+            {% if decks.count == 0 %}
+            <p class='col-item'>You have no decks!</p>
+            {% endif %}
+            {% for deck in decks %}
+            <div id={{deck.pk}} class="col-item">
+                <p class='prev1'>{{deck.name}}</p>
+                <p class='prev2'>{{deck.description}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<div class="container">
+<p data-stuff='col3'class='col-heading'>Select a FlashCard</p>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form action="{% url 'add-card' %}" method="post">
+           {% csrf_token %}
+           <div class="form-group">
+              <label for="{{ form.deck.id_for_label }}">Deck</label>
+              <input type="text" class="form-control" i
+                    name="{{ form.deck.html_name }}"
+                    id="{{ form.deck.id_for_label }}" placeholder="Deck">
+           </div>
+
+           <div class="form-group">
+              <label for="{{ form.question.id_for_label }}">Front</label>
+              <textarea class="form-control" rows=3
+                      id="{{ form.question.id_for_label }}"
+                      name="{{ form.question.html_name }}"></textarea>
+           </div>
+
+           <div class="form-group">
+              <label for="{{ form.answer.id_for_label }}">Back</label>
+              <textarea class="form-control" rows=3
+                        id="{{ form.answer.id_for_label }}"
+                        name="{{ form.answer.html_name }}"></textarea>
+           </div>
+
+           <button type="submit" class="btn btn-default">Add</button>
+        </form>
+    </div>
+  </div>
+<div>
+</main>
+
 {% endblock %}
 
 {% block javascript %}
