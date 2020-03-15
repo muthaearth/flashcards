@@ -11,8 +11,8 @@ from rest_framework import routers
 urlpatterns = [
     # path('', include(router.urls)),
     path('', views.home, name="home"),
-    path('<slug:deck_slug>/flash-cards/',
-         views.flashcard_index, name='flashcard_index')
+    path('<slug:deck_slug>/<int:pk>/',
+         views.flashcard_display, name='flashcard_display')
 ]
 
 

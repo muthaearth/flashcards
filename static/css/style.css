@@ -13,6 +13,46 @@ a {
   color: #12922c;
 }
 
+/* Top Navigation
+_______________________________________________________ */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: whitesmoke;
+}
+
+.navbar .logo {
+  font-size: 32px;
+  margin-left: 50px;
+  font-weight: 600;
+}
+
+.navbar .nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.navbar .nav-links a {
+  color: black;
+  padding: 15px;
+  transition: all 0.2s ease;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.navbar .nav-links a:hover {
+  color: #12922c;
+}
+
+/* Deck Index
+________________________________________________ */
+
 .home h1 {
   font-size: 50px;
   font-family: Montserrat;
@@ -25,6 +65,7 @@ a {
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .deck-box {
@@ -54,4 +95,134 @@ a {
   font-size: 20px;
   font-weight: 400;
   color: black;
+}
+
+/* Flashcard Display
+_______________________________________________ */
+
+.flashcard-display {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.flashcard-display .title {
+  margin: 30px 0 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: #12922c;
+}
+
+.flashcard-display .help-text {
+  font-size: 16px;
+  color: grey;
+  text-align: left;
+  max-width: 600px;
+  width: 95%;
+}
+
+/* Flash Card Style */
+
+.flash-card {
+  border-radius: 10px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 300px;
+  border: 1px solid black;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.flash-card:hover {
+  transform: rotateY(180deg);
+}
+
+.flash-card .front {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.flash-card .back {
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #d5f2d1;
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+
+.flash-card .question {
+  font-size: 30px;
+}
+
+.flash-card .answer {
+  font-size: 30px;
+}
+
+/* Answer Buttons */
+
+.answer-area {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.answer-area > p {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.buttons-area {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-area > * {
+  padding: 10px 15px;
+  margin: 20px 30px;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: #16b335;
+}
+
+.correct:hover {
+  background-color: #16b33590;
+}
+
+.incorrect {
+  background-color: #f53b3b;
+}
+
+.incorrect:hover {
+  background-color: #f53b3b90;
 }

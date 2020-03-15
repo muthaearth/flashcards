@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="flashcard-display">
+    <h1 class="title">{{ deck.name }}</h1>
+    <p class="help-text">*This is based on the honor system. Please pick whether or not you got the answer correct and answer honestly. If you don't, you're going to hell. I'll see you there ;)</p>
+    <div class="flex-grid">
+        <div class="flash-card">
+            <div class="front">
+                <p class="question">{{ card.question }}</p>
+            </div>
+            <div class="back">
+                <p class="answer">{{ card.answer }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="answer-area">
+        <p>I answered this question:</p>
+        <div class="buttons-area">
+            <div class="correct">Correct</div>
+            <div class="incorrect">Incorrect</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

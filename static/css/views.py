@@ -35,11 +35,17 @@ class FlashCardView(viewsets.ModelViewSet):
     serializer_class = FlashCardSerializer
 
 
+# 1. Click on a deck
+# 2. that returns a random flash card inside of the deck
+# 3. Then display that card in the center of the screen.
+
+
+# 1. Get a list of all of the cards inside of a deck
+# 2. Pick a random object's primary key from that list
+# 3. Pass it into the deck link
+
 @login_required
 def home(request):
-    """
-    App home page
-    """
     if request.method == 'GET':
         # decks = Deck.objects.filter(owner=request.user)
         decks = Deck.objects.all()
@@ -51,7 +57,7 @@ def home(request):
         return render(request, 'flashcards/index.html', context)
 
 
-def flashcard_index(request, deck_slug):
+def flashcard_display(request, deck_slug, pk):
 
     decks = Deck.objects
 
@@ -62,9 +68,10 @@ def flashcard_index(request, deck_slug):
 
     context = {
         'deck': instance,
+        'card': instance.flashcards.get(pk=pk),
     }
 
-    return render(request, 'flashcards/flashcard_index.html', context)
+    return render(request, 'flashcards/flashcard_display.html', context)
 
 
 @csrf_exempt

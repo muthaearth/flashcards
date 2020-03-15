@@ -9,6 +9,7 @@ from datetime import timedelta
 from django.contrib.auth import get_user_model
 from users.models import User
 from django.utils.text import slugify
+import random
 
 
 class FlashCardManager(models.Manager):
@@ -102,8 +103,13 @@ class Deck(models.Model):
 
     @property
     def slug(self):
-        # Service.objects.filter(title=self.title).exists()
+        """Returns a slugged version of the name of the deck (e.g., Deck Name: Truthy Falsy, Slug: truthy-falsy)"""
         return slugify(self.name)
+
+    def random_card(self):
+        """Return a random primary key of a flashcard in current deck."""
+        card_pk = random.choice(self.flashcards.all()).pk
+        return card_pk
 
 
 @receiver(post_save, sender=User)

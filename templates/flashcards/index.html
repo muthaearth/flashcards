@@ -5,11 +5,11 @@
 {% endblock %}
 {% block content %}
 <div class="home">
-<h1>MLC7 Flashcards</h1>
+<h1>Choose Your Deck</h1>
 
     <div class="flex-grid">
     {% for deck in decks %}
-        <a class="deck-box" href="{% url 'flashcard_index' deck.slug %}">
+        <a class="deck-box" href="{% url 'flashcard_display' deck.slug  deck.random_card %}">
             <p class="title">{{ deck.name }}</p>
             <p class="description">{{ deck.description }}</p>
         </a>
