@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="flashcard-display">
+    <h1 class="title">Correct!</h1>
+    <div class="answer-area">
+        <div class="buttons-area">
+            <a href="{% url 'flashcard_display' deck.slug deck.random_card %}" class="correct">Next Question</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

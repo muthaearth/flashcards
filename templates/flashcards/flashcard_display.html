@@ -3,7 +3,8 @@
 {% block content %}
 <div class="flashcard-display">
     <h1 class="title">{{ deck.name }}</h1>
-    <p class="help-text">*This is based on the honor system. Please pick whether or not you got the answer correct and answer honestly. If you don't, you're going to hell. I'll see you there ;)</p>
+    <p class="description">{{ deck.description }}</p>
+    <p class="help-text">*This MLC7 Flashcard app is based on the honor system. Please truthfully choose if you got the answer correct or incorrect. If you cheat, you will eternally while-loop in SWDev purgatory! ;)</p>
     <div class="flex-grid">
         <div class="flash-card">
             <div class="front">
@@ -17,7 +18,7 @@
     <div class="answer-area">
         <p>I answered this question:</p>
         <div class="buttons-area">
-            <div class="correct">Correct</div>
+            <a href="{% url 'correct_answer' deck.slug card.pk %}" class="correct">Correct</div>
             <div class="incorrect">Incorrect</div>
         </div>
     </div>

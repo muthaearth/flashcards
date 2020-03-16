@@ -20,7 +20,7 @@ _______________________________________________________ */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 60px;
   background-color: whitesmoke;
 }
 
@@ -35,7 +35,7 @@ _______________________________________________________ */
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin-right: 20px;
+  margin-right: 600px;
 }
 
 .navbar .nav-links a {
@@ -78,7 +78,7 @@ ________________________________________________ */
   cursor: pointer;
   transition: box-shadow 0.2s ease;
   text-align: center;
-  height: 400px;
+  height: 200px;
   width: 300px;
 }
 
@@ -114,11 +114,19 @@ _______________________________________________ */
   color: #12922c;
 }
 
+.flashcard-display .description {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: black;
+}
+
 .flashcard-display .help-text {
   font-size: 16px;
   color: grey;
   text-align: left;
-  max-width: 600px;
+  max-width: 700px;
   width: 95%;
 }
 
@@ -170,11 +178,11 @@ _______________________________________________ */
 }
 
 .flash-card .question {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .flash-card .answer {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 /* Answer Buttons */
@@ -187,7 +195,7 @@ _______________________________________________ */
 }
 
 .answer-area > p {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 300;
 }
 

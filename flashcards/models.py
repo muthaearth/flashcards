@@ -109,6 +109,11 @@ class Deck(models.Model):
     def random_card(self):
         """Return a random primary key of a flashcard in current deck."""
         card_pk = random.choice(self.flashcards.all()).pk
+        card = self.flashcards.get(pk=card_pk)
+        if card.consec_correct_answers == 1 or card.consec_correct_answers == -1:
+            card_pk = random.choice(self.flashcards.all()).pk
+            card = self.flashcards.get(pk=card_pk)
+
         return card_pk
 
 
