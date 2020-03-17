@@ -19,8 +19,10 @@
         <p>I answered this question:</p>
         <div class="buttons-area">
             <a href="{% url 'correct_answer' deck.slug card.pk %}" class="correct">Correct</div>
-            <div class="incorrect">Incorrect</div>
-        </div>
+
+        <div class="buttons-area">
+            <a href="{% url 'incorrect_answer' deck.slug card.pk %}" class="correct">Incorrect</div>
     </div>
+    {% comment %} </div> {% endcomment %}
 </div>
 {% endblock %}

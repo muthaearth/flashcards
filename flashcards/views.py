@@ -16,6 +16,10 @@ import json
 import random
 
 
+# 1. Click on a deck
+# 2. Return random flash card inside of the deck
+# 3. Display that card in the center of the screen.
+
 class DeckView(viewsets.ModelViewSet):
     """
     Handles routing for POST, PATCH, GET, DELETE
@@ -30,11 +34,6 @@ class FlashCardView(viewsets.ModelViewSet):
     """
     queryset = FlashCard.objects.all()
     serializer_class = FlashCardSerializer
-
-
-# 1. Click on a deck
-# 2. Return random flash card inside of the deck
-# 3. Display that card in the center of the screen.
 
 
 # 1. Get list of all cards inside of a deck
@@ -90,3 +89,23 @@ def correct_answer(request, deck_slug, pk):
         'card': card,
     }
     return render(request, 'flashcards/correct_answer.html', context)
+
+
+def incorrect_answer(request, deck_slug, pk):
+    # Turn the text content of deck name into a slug
+    decks = Deck.objects
+
+    for deck in decks.all():
+        if slugify(deck.name) == deck_slug:
+            instance = deck
+            break
+
+    card = instance.flashcards.get(pk=pk)
+    card.consec_correct_answers = 1
+    card.save()
+
+    context = {
+        'deck': instance,
+        'card': card,
+    }
+    return render(request, 'flashcards/incorrect_answer.html', context)
