@@ -1,6 +1,8 @@
 
+import django_heroku
 import os
 from pathlib import Path
+
 
 import environ
 
@@ -141,6 +143,10 @@ REGISTRATION_EMAIL_HTML = True
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Configure Django App for Heroku
+django_heroku.settings(locals())
+
 
 # REST_FRAMEWORK = {
 #     # 'DEFAULT_AUTHENTICATION_CLASSES': [

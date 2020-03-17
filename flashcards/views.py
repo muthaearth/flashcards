@@ -80,6 +80,7 @@ def correct_answer(request, deck_slug, pk):
             instance = deck
             break
 
+    # Correct Answer
     card = instance.flashcards.get(pk=pk)
     card.consec_correct_answers = 1
     card.save()
@@ -100,8 +101,9 @@ def incorrect_answer(request, deck_slug, pk):
             instance = deck
             break
 
+    # Incorrect Answer
     card = instance.flashcards.get(pk=pk)
-    card.consec_correct_answers = 1
+    card.consec_correct_answers = -1
     card.save()
 
     context = {

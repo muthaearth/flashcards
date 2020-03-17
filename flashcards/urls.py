@@ -9,7 +9,7 @@ urlpatterns = [
     path('<slug:deck_slug>/<int:pk>/',
          views.flashcard_display, name='flashcard_display'),
     path('<slug:deck_slug>/<int:pk>/correct/',
-         views.correct_answer, name='correct_answer')
+         views.correct_answer, name='correct_answer'),
     path('<slug:deck_slug>/<int:pk>/incorrect/',
          views.incorrect_answer, name='incorrect_answer')
 ]

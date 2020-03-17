@@ -18,11 +18,10 @@
     <div class="answer-area">
         <p>I answered this question:</p>
         <div class="buttons-area">
-            <a href="{% url 'correct_answer' deck.slug card.pk %}" class="correct">Correct</div>
-
-        <div class="buttons-area">
-            <a href="{% url 'incorrect_answer' deck.slug card.pk %}" class="correct">Incorrect</div>
+            <a href="{% url 'correct_answer' deck.slug card.pk %}" class="correct">Correct</a>
+            
+            <a href="{% url 'incorrect_answer' deck.slug card.pk %}" class="incorrect">Incorrect</a>
+        </div>
     </div>
-    {% comment %} </div> {% endcomment %}
 </div>
 {% endblock %}
