@@ -1,0 +1,3006 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": { "app_label": "registration", "model": "registrationprofile" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "registration",
+      "model": "supervisedregistrationprofile"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": { "app_label": "admin", "model": "logentry" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": { "app_label": "auth", "model": "permission" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": { "app_label": "auth", "model": "group" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": { "app_label": "contenttypes", "model": "contenttype" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": { "app_label": "sessions", "model": "session" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": { "app_label": "authtoken", "model": "token" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": { "app_label": "users", "model": "user" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": { "app_label": "flashcards", "model": "deck" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": { "app_label": "flashcards", "model": "flashcard" }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "c5stpmb5izugnovjg2rmze0vv67qycwr",
+    "fields": {
+      "session_data": "N2ZjYmZlMzc2YjdiNDhhYWY3MDE1MDZmNWNmNGRhNzFlMzE3NTFjYjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MDg4NDYzYmRiNzY0NzA1NzQ5OTdhMTI4YTI2MTRmZTczMmM5NjdlIn0=",
+      "expire_date": "2020-04-01T16:42:37.521Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ispnp51txnk6kzj1xf7hcij750k1nscr",
+    "fields": {
+      "session_data": "N2ZjYmZlMzc2YjdiNDhhYWY3MDE1MDZmNWNmNGRhNzFlMzE3NTFjYjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MDg4NDYzYmRiNzY0NzA1NzQ5OTdhMTI4YTI2MTRmZTczMmM5NjdlIn0=",
+      "expire_date": "2020-03-31T16:53:07.120Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "t0pd70bjx0fr2pwbhe7yf1crpgibzzcr",
+    "fields": {
+      "session_data": "NDNlNTlmZWM1NDAxMjYxMGY4NTAxZGNiZTY0ZTVlOGY1ZjY1MzBjNjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiOTRmZDY4OTlkNDA5YmFjMzY3M2M2MGExOGUyMDk3MmFmM2E1OGJhIn0=",
+      "expire_date": "2020-03-29T18:55:35.358Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "yxi7msg5hqybm88wohcsvho16be4puxk",
+    "fields": {
+      "session_data": "NDNlNTlmZWM1NDAxMjYxMGY4NTAxZGNiZTY0ZTVlOGY1ZjY1MzBjNjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiOTRmZDY4OTlkNDA5YmFjMzY3M2M2MGExOGUyMDk3MmFmM2E1OGJhIn0=",
+      "expire_date": "2020-03-29T19:56:47.237Z"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add registration profile",
+      "content_type": 1,
+      "codename": "add_registrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change registration profile",
+      "content_type": 1,
+      "codename": "change_registrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete registration profile",
+      "content_type": 1,
+      "codename": "delete_registrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view registration profile",
+      "content_type": 1,
+      "codename": "view_registrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add supervised registration profile",
+      "content_type": 2,
+      "codename": "add_supervisedregistrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change supervised registration profile",
+      "content_type": 2,
+      "codename": "change_supervisedregistrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete supervised registration profile",
+      "content_type": 2,
+      "codename": "delete_supervisedregistrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view supervised registration profile",
+      "content_type": 2,
+      "codename": "view_supervisedregistrationprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 3,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 3,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 3,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 3,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 4,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 4,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 4,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 4,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 5,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 5,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 5,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 5,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 6,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 6,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 6,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 6,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 7,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 7,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 7,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 7,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add Token",
+      "content_type": 8,
+      "codename": "add_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change Token",
+      "content_type": 8,
+      "codename": "change_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete Token",
+      "content_type": 8,
+      "codename": "delete_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view Token",
+      "content_type": 8,
+      "codename": "view_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 9,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 9,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 9,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 9,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add deck",
+      "content_type": 10,
+      "codename": "add_deck"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change deck",
+      "content_type": 10,
+      "codename": "change_deck"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete deck",
+      "content_type": 10,
+      "codename": "delete_deck"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view deck",
+      "content_type": 10,
+      "codename": "view_deck"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add flash card",
+      "content_type": 11,
+      "codename": "add_flashcard"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change flash card",
+      "content_type": 11,
+      "codename": "change_flashcard"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete flash card",
+      "content_type": 11,
+      "codename": "delete_flashcard"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view flash card",
+      "content_type": 11,
+      "codename": "view_flashcard"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$PzFQaEOY5fBu$AoHTHDIodg1RityzbQunAKaMVE7lDxGLO3aAUCfaD00=",
+      "last_login": "2020-03-18T16:42:37.496Z",
+      "is_superuser": true,
+      "username": "cheryl",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-03-15T18:54:58.860Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$QldqV9LyxcNl$BHNBlp2UXDs/XjyXNf5uYk6x3V7oV8KHpqNr55+yAD4=",
+      "last_login": "2020-03-16T14:13:38.213Z",
+      "is_superuser": false,
+      "username": "pepsi",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-03-16T09:01:57.924Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$4r4d7HAmvKa9$eETuzNMUvmInX5weU8E7Ixg8NIN/TbySKtzmxD671to=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "niles",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-03-16T09:02:46.265Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$9C8JCpoZzf3h$+EKQ0eNZX2WhKX3Y+B3uipSInYgQ5iFmty4EiEXgNeQ=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "donna",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-03-16T09:03:00.609Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$qErbNb5FOLRL$hhiiA1rIon084EEiCbLu2oNifi0VdLFbEXtbM52W8uw=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "mark",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-03-16T09:03:21.863Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$EDTQXkXnbnmY$ysSNDVNhT/movIiGcIR9p6XG9erwfjlLGn4xt99M0Uw=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "josef",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-03-16T09:03:42.752Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$uVO8rcapYxze$YlMtNdSaGxy5J297PMi4D+ZAs3TJ6ZL21hh+LAemWXs=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kerry",
+      "first_name": "",
+      "last_name": "",
+      "email": "kerry@gmail.com",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-03-16T11:49:31.087Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$DmVUQwqp7VQ3$yEPru6GwXY2MOjiTelOi+KoFB/ma2xkA8lFBOshfCOA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "petunia",
+      "first_name": "",
+      "last_name": "",
+      "email": "petunia@gmail.com",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2020-03-17T16:49:41.719Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 4,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. UI/UX is short for...?",
+      "answer": "User Interface User eXperience",
+      "created_at": "2020-03-16T08:59:07.478Z",
+      "last_shown_at": "2020-03-16T08:59:07.478Z",
+      "next_due_date": "2020-03-16T08:56:58Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 5,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. API is short for...?",
+      "answer": "Application Programming Interface",
+      "created_at": "2020-03-16T09:06:21.196Z",
+      "last_shown_at": "2020-03-16T09:06:21.196Z",
+      "next_due_date": "2020-03-16T09:05:21Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 6,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. SDK is short for...?",
+      "answer": "Software Development Kit",
+      "created_at": "2020-03-16T09:07:47.705Z",
+      "last_shown_at": "2020-03-16T09:07:47.705Z",
+      "next_due_date": "2020-03-16T09:07:10Z",
+      "difficulty_level": 1.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 7,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. OOP means...?",
+      "answer": "Object Oriented Programming",
+      "created_at": "2020-03-16T09:08:51.707Z",
+      "last_shown_at": "2020-03-16T09:08:51.707Z",
+      "next_due_date": "2020-03-16T09:07:47Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 8,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. AJAX means...?",
+      "answer": "Asynchronous JavaScript And XML",
+      "created_at": "2020-03-16T09:09:40.932Z",
+      "last_shown_at": "2020-03-16T09:09:40.932Z",
+      "next_due_date": "2020-03-16T09:08:51Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 9,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. What is the meaning of CSS?",
+      "answer": "Cascading Style Sheet",
+      "created_at": "2020-03-16T09:10:08.964Z",
+      "last_shown_at": "2020-03-16T09:10:08.964Z",
+      "next_due_date": "2020-03-16T09:09:41Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 10,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. What is the meaning of HTTP?",
+      "answer": "HyperText Transfer Protocol",
+      "created_at": "2020-03-16T09:10:52.828Z",
+      "last_shown_at": "2020-03-16T09:10:52.828Z",
+      "next_due_date": "2020-03-16T09:10:09Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 11,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. What is the meaning of XML?",
+      "answer": "Extensible Markup Language",
+      "created_at": "2020-03-16T09:11:10.608Z",
+      "last_shown_at": "2020-03-16T09:11:10.608Z",
+      "next_due_date": "2020-03-16T09:10:52Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 12,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. The DOM means...?",
+      "answer": "Document Object Model",
+      "created_at": "2020-03-16T09:11:41.047Z",
+      "last_shown_at": "2020-03-16T09:11:41.047Z",
+      "next_due_date": "2020-03-16T09:11:10Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 13,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. What does ORM mean?",
+      "answer": "Object Relational Mapping",
+      "created_at": "2020-03-16T09:12:08.219Z",
+      "last_shown_at": "2020-03-16T09:12:08.219Z",
+      "next_due_date": "2020-03-16T09:11:41Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": -1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 14,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. What does B2B mean?",
+      "answer": "Business to Business",
+      "created_at": "2020-03-16T09:12:34.911Z",
+      "last_shown_at": "2020-03-16T09:12:34.911Z",
+      "next_due_date": "2020-03-16T09:12:08Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 15,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. What does B2C mean?",
+      "answer": "Business to Consumer",
+      "created_at": "2020-03-16T09:13:20.865Z",
+      "last_shown_at": "2020-03-16T09:13:20.865Z",
+      "next_due_date": "2020-03-16T09:12:35Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 16,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy. Technical debt (aka tech debt, code debt) is what you owe on your Momentum Learning coding tuition",
+      "answer": "Falsy (well, sort of). Tech debt describes what results when development teams take actions to expedite the delivery of a piece of functionality or a project which later needs to be refactored",
+      "created_at": "2020-03-16T09:17:09.297Z",
+      "last_shown_at": "2020-03-16T09:17:09.297Z",
+      "next_due_date": "2020-03-16T09:16:18Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 17,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy. The first formal description of the Waterfall software development methodology is often cited to have been published in 1970. A revision called, Waterfalls by TLC, was released 25 years later.",
+      "answer": "Falsy. Waterfalls was an original R&B hit that had no relation to Waterfall swdev model.",
+      "created_at": "2020-03-16T09:17:56.230Z",
+      "last_shown_at": "2020-03-16T09:17:56.230Z",
+      "next_due_date": "2020-03-16T09:17:09Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 18,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy. UI/UX a spinoff of SXSW",
+      "answer": "Falsy. UI/UX is a user interface and user experience design concept. South by Southwest is the annual convergence of the interactive, film, and music industries.",
+      "created_at": "2020-03-16T09:18:35.779Z",
+      "last_shown_at": "2020-03-16T09:18:35.780Z",
+      "next_due_date": "2020-03-16T09:17:56Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 19,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy. Git is a term of insult with origins in English denoting an unpleasant, silly, incompetent, annoying, senile, elderly or childish person.",
+      "answer": "Truthy. Git is also a version control system for team code collaboration and development.",
+      "created_at": "2020-03-16T09:19:13.213Z",
+      "last_shown_at": "2020-03-16T09:19:13.213Z",
+      "next_due_date": "2020-03-16T09:18:35Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 20,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy. A quote coined by Clinton Dreisbach during MLC7 suggested that \\\"Imagination has no address.",
+      "answer": "Truthy. Clinton Dreisbach did coin the phrase. Falsy. Imagination is a 50-year-old independent experience company with 12 offices worldwide (imagination.com).",
+      "created_at": "2020-03-16T09:19:55.212Z",
+      "last_shown_at": "2020-03-16T09:19:55.213Z",
+      "next_due_date": "2020-03-16T09:19:13Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 21,
+    "fields": {
+      "owner": 2,
+      "question": "Acronym. JSON is short for...?",
+      "answer": "JavaScript Object Notion",
+      "created_at": "2020-03-16T09:27:59.438Z",
+      "last_shown_at": "2020-03-16T09:27:59.438Z",
+      "next_due_date": "2020-03-16T09:26:56Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 22,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend. What purpose does JSON (JavaScript Object Notion) have?",
+      "answer": "JSON is an open standard file format, and data interchange format, that uses human-readable text to store and transmit data objects consisting of attribute value pairs, array data types (or any other serializable value)",
+      "created_at": "2020-03-16T09:30:24.923Z",
+      "last_shown_at": "2020-03-16T09:30:24.923Z",
+      "next_due_date": "2020-03-16T09:27:59Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 23,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend. What language of rules affect the style of HTML content?",
+      "answer": "CSS (Cascading Style Sheets)",
+      "created_at": "2020-03-16T09:32:23.473Z",
+      "last_shown_at": "2020-03-16T09:32:23.473Z",
+      "next_due_date": "2020-03-16T09:30:25Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 25,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. What techniques are used to send data asynchronously to and from a server in the background without any changes to the web page for the user?",
+      "answer": "AJAX (Asynchronous JavaScript And XML)",
+      "created_at": "2020-03-16T09:37:02.532Z",
+      "last_shown_at": "2020-03-16T09:37:02.532Z",
+      "next_due_date": "2020-03-16T09:34:50Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 26,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy.  appendChild() is an obsolete method of the JavaScript DOM.",
+      "answer": "Falsy. appendChild() is a deprecated method of the Javascript DOM",
+      "created_at": "2020-03-16T09:41:16.875Z",
+      "last_shown_at": "2020-03-16T09:41:16.876Z",
+      "next_due_date": "2020-03-16T09:37:02Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 27,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend. XML (Extensible Markup Language) is a term that does what?",
+      "answer": "XML is a metalanguage which allows a developer to define their own customized markup languages, especially in order to display documents on the Internet.",
+      "created_at": "2020-03-16T10:00:36.429Z",
+      "last_shown_at": "2020-03-16T10:00:36.429Z",
+      "next_due_date": "2020-03-16T10:00:04Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 28,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend. CDN (Content Delivery Network) is a group of servers spread out over many locations and widely used for delivering what type resource(s)?",
+      "answer": "CDN is widely used for delivering stylesheets and Javascript files (static assets) of libraries such as, Tachyons, Shoelace, Bootstrap, and JQuery.",
+      "created_at": "2020-03-16T10:01:27.565Z",
+      "last_shown_at": "2020-03-16T10:01:27.565Z",
+      "next_due_date": "2020-03-16T10:00:36Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 29,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. What is the purpose of an API (Application Programming Interface)?",
+      "answer": "API is a set of functions and procedures allowing the creation of web applications that access the features or data of an operating system, application, or other service.",
+      "created_at": "2020-03-16T10:05:28.948Z",
+      "last_shown_at": "2020-03-16T10:05:28.948Z",
+      "next_due_date": "2020-03-16T10:01:27Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 30,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. What are the four basic functions of CRUD?",
+      "answer": "Create, Read, Update, Delete are the four basic functions a software developer builds into every app for user interaction",
+      "created_at": "2020-03-16T10:06:25.272Z",
+      "last_shown_at": "2020-03-16T10:06:25.272Z",
+      "next_due_date": "2020-03-16T10:05:50Z",
+      "difficulty_level": 1.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 31,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. DOM (Document Object Model) is a programming API that defines the logical structure of documents and the way a document is accessed and manipulated for what two interface types?",
+      "answer": "HTML and XML documents",
+      "created_at": "2020-03-16T10:07:08.779Z",
+      "last_shown_at": "2020-03-16T10:07:08.779Z",
+      "next_due_date": "2020-03-16T10:06:25Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 32,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. What two endpoints does FTP (File Transfer Protocol) affect?",
+      "answer": "FTP transfers files over the web from a client endpoint to a server endpoint.",
+      "created_at": "2020-03-16T10:07:39.838Z",
+      "last_shown_at": "2020-03-16T10:07:39.838Z",
+      "next_due_date": "2020-03-16T10:07:18Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 33,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. What mapping technique converts data between incompatible type systems in object-oriented programming languages",
+      "answer": "ORM (Object Relational Mapping) is a technique for converting data between systems in object-oriented programming languages.",
+      "created_at": "2020-03-16T10:08:26.160Z",
+      "last_shown_at": "2020-03-16T10:08:26.160Z",
+      "next_due_date": "2020-03-16T10:08:01Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 34,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. REGEX (REGular EXpression) is a set of rules used to process what type data?",
+      "answer": "REGEX rules the process of strings, such as alphabets and numbers.",
+      "created_at": "2020-03-16T10:10:31.013Z",
+      "last_shown_at": "2020-03-16T10:10:31.013Z",
+      "next_due_date": "2020-03-16T10:08:26Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 35,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. Web services that conform to the REpresentational State Transfer (REST) software architectural style are called...",
+      "answer": "RESTFul web services. Examples include APACHE CXF, Jello Framework, Windows Communication Foundation.",
+      "created_at": "2020-03-16T10:11:37.024Z",
+      "last_shown_at": "2020-03-16T10:11:37.024Z",
+      "next_due_date": "2020-03-16T10:10:31Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": -1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 36,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. What is the purpose of a URI (Uniform Resource Identifier)?",
+      "answer": "A URI is a sequence (string) of characters that identifies a logical or physical resource.",
+      "created_at": "2020-03-16T10:12:08.186Z",
+      "last_shown_at": "2020-03-16T10:12:08.186Z",
+      "next_due_date": "2020-03-16T10:11:37Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": -1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 37,
+    "fields": {
+      "owner": 2,
+      "question": "Backend. The acronym WYSIWYG (wi-zee-wig) means, \"What You See Is What You Get.\" But what exactly does it do?",
+      "answer": "WYSIWYG is an editor that allows you to design a web page or text as you see it, without needing to write HTML",
+      "created_at": "2020-03-16T10:12:37.123Z",
+      "last_shown_at": "2020-03-16T10:12:37.123Z",
+      "next_due_date": "2020-03-16T10:12:08Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 38,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend.  What techniques are used to send data asynchronously to and from a server in the background without any changes to the web page for the user?",
+      "answer": "AJAX (Asynchronous JavaScript And XML)",
+      "created_at": "2020-03-16T10:17:24.642Z",
+      "last_shown_at": "2020-03-16T10:17:24.642Z",
+      "next_due_date": "2020-03-16T10:16:58Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 39,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend. A CMS (content management system) is a software application or set of related programs that are used for what purpose?",
+      "answer": "A CMS creates and manages digital content.",
+      "created_at": "2020-03-16T10:28:40.966Z",
+      "last_shown_at": "2020-03-16T10:28:40.966Z",
+      "next_due_date": "2020-03-16T10:18:39Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 40,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend. What is the purpose of software application load testing?",
+      "answer": "Load testing is performed to determine the behavior of a software application on a system under both normal and at peak conditions.",
+      "created_at": "2020-03-16T10:34:30.834Z",
+      "last_shown_at": "2020-03-16T10:34:30.834Z",
+      "next_due_date": "2020-03-16T10:28:41Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 41,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy. On the web, front-end developer code tells your browser how to do things.",
+      "answer": "Falsy. Front-end developer code tells your browser what to do. Back-end developer code tells your browser 'HOW' to do it.",
+      "created_at": "2020-03-16T10:43:24.446Z",
+      "last_shown_at": "2020-03-16T10:43:24.446Z",
+      "next_due_date": "2020-03-16T10:38:40Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 42,
+    "fields": {
+      "owner": 2,
+      "question": "Frontend. What type web-based platform collects information from different sources into a single user interface and presents users with the most relevant information for their context.",
+      "answer": "A portal system.",
+      "created_at": "2020-03-16T10:50:19.865Z",
+      "last_shown_at": "2020-03-16T10:50:19.865Z",
+      "next_due_date": "2020-03-16T10:48:46Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 43,
+    "fields": {
+      "owner": 2,
+      "question": "Code. \"<p>JavaScript strings can be written with double or single quotes.</p>\" returns what result?",
+      "answer": "The words within the <p></p> as a paragraph.",
+      "created_at": "2020-03-16T11:11:29.960Z",
+      "last_shown_at": "2020-03-16T11:11:29.960Z",
+      "next_due_date": "2020-03-16T11:05:14Z",
+      "difficulty_level": 0.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 44,
+    "fields": {
+      "owner": 2,
+      "question": "Code. What is result of the command \"python3 -m venv venv\"?",
+      "answer": "This command will create a folder venv in your working directory. Inside this directory, you\u2019ll find several files including a copy of the Python standard library. Later, when you install new dependencies, they will also be stored in this directory.",
+      "created_at": "2020-03-16T11:17:42.835Z",
+      "last_shown_at": "2020-03-16T11:17:42.835Z",
+      "next_due_date": "2020-03-16T11:11:30Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 45,
+    "fields": {
+      "owner": 2,
+      "question": "Code. What does the dot notation \"{{ project.title }}\" do in this code?",
+      "answer": "The dot notation is used to access the project\u2019s \"title\" attribute. The same notation can be used to access any other project attribute.",
+      "created_at": "2020-03-16T11:29:04.467Z",
+      "last_shown_at": "2020-03-16T11:29:04.467Z",
+      "next_due_date": "2020-03-16T11:20:58Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 46,
+    "fields": {
+      "owner": 2,
+      "question": "Code. The CSS code \"transform: rotateY(180deg)\" does what?",
+      "answer": "\"transform: rotateY(180deg)\" defines a transformation that rotates an element 180 degrees around the ordinate (vertical axis) without deforming it.",
+      "created_at": "2020-03-16T11:42:38.578Z",
+      "last_shown_at": "2020-03-16T11:42:38.579Z",
+      "next_due_date": "2020-03-16T11:30:22Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 1
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 47,
+    "fields": {
+      "owner": 2,
+      "question": "Code. What is the result of this CSS code \"backface-visibility: hidden;\"?",
+      "answer": "The backface-visibility property defines whether or not the back face of an element should be visible or hidden when facing the user. In this case it is hidden.",
+      "created_at": "2020-03-16T11:45:17.070Z",
+      "last_shown_at": "2020-03-16T11:45:17.070Z",
+      "next_due_date": "2020-03-16T11:43:25Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 48,
+    "fields": {
+      "owner": 2,
+      "question": "Truthy or Falsy. A URL (Uniform Resource Locator) is a language for specifying addresses on the internet, or an address that identifies a particular file on the Internet, usually consisting of http, followed by the domain name.",
+      "answer": "Falsy. A URL is a \"protocol,\" not a language for specifying Internet addresses.",
+      "created_at": "2020-03-17T16:05:39.692Z",
+      "last_shown_at": "2020-03-17T16:05:39.692Z",
+      "next_due_date": "2020-03-17T16:00:47Z",
+      "difficulty_level": 2.5,
+      "consec_correct_answers": 0
+    }
+  },
+  {
+    "model": "flashcards.deck",
+    "pk": 1,
+    "fields": {
+      "owner": 2,
+      "name": "Truthy Falsy",
+      "description": "Eclectic truths and falsehoods",
+      "flashcards": [16, 17, 18, 19, 20, 26, 41, 48]
+    }
+  },
+  {
+    "model": "flashcards.deck",
+    "pk": 2,
+    "fields": {
+      "owner": 2,
+      "name": "Acroynms",
+      "description": "Abbreviated words that software developers use",
+      "flashcards": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 21]
+    }
+  },
+  {
+    "model": "flashcards.deck",
+    "pk": 4,
+    "fields": {
+      "owner": 2,
+      "name": "Back-End Software Development",
+      "description": "Terms applicable to back-end software development",
+      "flashcards": [29, 30, 31, 32, 33, 34, 35, 36, 37]
+    }
+  },
+  {
+    "model": "flashcards.deck",
+    "pk": 5,
+    "fields": {
+      "owner": 2,
+      "name": "Front-End Development Terms",
+      "description": "Terms applicable to front-end software development",
+      "flashcards": [22, 23, 27, 28, 38, 39, 40, 42]
+    }
+  },
+  {
+    "model": "flashcards.deck",
+    "pk": 6,
+    "fields": {
+      "owner": 2,
+      "name": "Code 'Splainin",
+      "description": "Explain expected outcome of given code",
+      "flashcards": [43, 44, 45, 46, 47]
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2020-03-15T18:56:47.628Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Apples are blue.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2020-03-15T18:57:23.958Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "My cat's name is Kot.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2020-03-15T18:57:26.628Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Truthy Falsy",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2020-03-15T20:01:36.755Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Apples are blue.",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2020-03-15T20:03:02.765Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Do you love grapes?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2020-03-15T20:07:29.412Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Apples are blue.",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2020-03-15T20:07:37.610Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "My cat's name is Kot.",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2020-03-15T20:07:52.962Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Do you love grapes?",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2020-03-15T20:08:02.894Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "My cat's name is Kot.",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2020-03-15T20:08:19.396Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "My cat's name is Kot.",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2020-03-15T20:08:45.512Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Apples are blue.",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2020-03-15T20:10:28.964Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Truthy Falsy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2020-03-15T20:15:45.071Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Apples are blue.",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2020-03-15T20:16:43.587Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Apples are blue.",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2020-03-15T20:16:53.437Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Do you love grapes?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2020-03-15T20:17:00.873Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "My cat's name is Kot.",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2020-03-16T08:59:07.490Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "Acronym: What is the meaning of UI/UX?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2020-03-16T08:59:12.853Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Acroynms",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2020-03-16T09:00:17.527Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Do you love grapes?",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2020-03-16T09:00:30.322Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "My cat's name is Kot.",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2020-03-16T09:00:38.277Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Apples are blue.",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2020-03-16T09:01:39.308Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "adadmin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2020-03-16T09:01:58.209Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "pepsi",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2020-03-16T09:02:46.549Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "niles",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2020-03-16T09:03:00.897Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "5",
+      "object_repr": "donna",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2020-03-16T09:03:22.146Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "6",
+      "object_repr": "mark",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2020-03-16T09:03:43.039Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "7",
+      "object_repr": "josef",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2020-03-16T09:06:21.210Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "5",
+      "object_repr": "The acronym API means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2020-03-16T09:06:45.702Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "5",
+      "object_repr": "Acronym API means?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2020-03-16T09:07:09.967Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "Acronym UI/UX means?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2020-03-16T09:07:47.729Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "6",
+      "object_repr": "Acronym SDK means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2020-03-16T09:08:51.721Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "7",
+      "object_repr": "Acronym OOP means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2020-03-16T09:09:40.947Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "8",
+      "object_repr": "Acronym AJAX means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2020-03-16T09:10:08.978Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "9",
+      "object_repr": "Acronym CSS means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2020-03-16T09:10:52.843Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "10",
+      "object_repr": "Acronym HTTP means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2020-03-16T09:11:10.623Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "11",
+      "object_repr": "Acronym XML means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2020-03-16T09:11:41.060Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "12",
+      "object_repr": "Acronym DOM means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2020-03-16T09:12:08.243Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "13",
+      "object_repr": "Acronym ORM means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2020-03-16T09:12:34.934Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "14",
+      "object_repr": "Acronym B2B means?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2020-03-16T09:13:20.889Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "15",
+      "object_repr": "Acronym B2C?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2020-03-16T09:13:46.275Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Acroynms",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2020-03-16T09:17:09.312Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "16",
+      "object_repr": "Truthy or Falsy. Technical debt (aka tech debt, code debt) is what you owe on your Momentum Learning coding tuition",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2020-03-16T09:17:56.244Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "17",
+      "object_repr": "Truthy or Falsy. The first formal description of the Waterfall software development methodology is often cited to have been published in 1970. A revision called, Waterfalls by TLC, was released 25 yea",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2020-03-16T09:18:35.794Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "18",
+      "object_repr": "Truthy or Falsy. UI/UX a spinoff of SXSW",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2020-03-16T09:19:13.235Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "19",
+      "object_repr": "Truthy or Falsy. Git is a term of insult with origins in English denoting an unpleasant, silly, incompetent, annoying, senile, elderly or childish person.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2020-03-16T09:19:55.227Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "20",
+      "object_repr": "Truthy or Falsy. A quote coined by Clinton Dreisbach during MLC7 suggested that \\\"Imagination has no address.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2020-03-16T09:20:37.390Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Truthy Falsy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2020-03-16T09:26:28.724Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Truthy Falsy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2020-03-16T09:27:59.461Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "21",
+      "object_repr": "Code: This is the HTML head element. How is the content displayed on the browser webpage?\\r\\n\\r\\n<head>\\r\\n  <meta charset=\\\"utf-8\\\">\\r\\n  <title>My test page</title>\\r\\n</head",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2020-03-16T09:30:24.938Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "22",
+      "object_repr": "Code. This is the HTML Content Division element <div>. In what color will heading3 display?\r\n\r\n<div>\r\n\\r\\n <h3>This is a heading</h3>\\r\\n\r\n</div>",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2020-03-16T09:32:23.487Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "23",
+      "object_repr": "Code. What type objects does the JSON.stringify method convert in this code?\r\n\r\nconsole.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]))",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2020-03-16T09:34:50.154Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "24",
+      "object_repr": "Code. What is the result of this built-in Django template firstof code?\r\n\r\nfirstof {% firstof var1 var2 var3 %}",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2020-03-16T09:37:02.546Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "25",
+      "object_repr": "Code. Explain what occurs in this Django template tag.\r\n\r\n{% for athlete in athlete_list %}\r\n\r\n     <li>{{ athlete.name }}</li>\r\n\r\n% endfor %}",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2020-03-16T09:41:16.889Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "26",
+      "object_repr": "Truthy or Falsy.  appendChild() is an obsolete method of the JavaScript DOM.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2020-03-16T09:41:40.657Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Truthy Falsy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2020-03-16T09:43:43.638Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "Code 'Splainin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2020-03-16T09:47:48.071Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "21",
+      "object_repr": "Code: This is the HTML head element. How is the content displayed on the browser webpage?\r\n\r\n<head>\r\n<meta charset=\\\"utf-8\\\">\r\n<title>My test page</title>\r\n</head",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2020-03-16T09:48:07.982Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "22",
+      "object_repr": "Code. This is the HTML Content Division element <div>. In what color will heading3 display?\r\n\r\n<div>\r\n\\r\\n <h3>This is a heading</h3>\\r\\n\r\n</div>",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Answer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2020-03-16T09:49:59.099Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "25",
+      "object_repr": "Backend. What techniques are used to send data asynchronously to and from a server in the background without any changes to the web page for the user?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\", \"Answer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2020-03-16T09:50:37.488Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "24",
+      "object_repr": "Code. What is the result of this Django template?\r\n\r\nfirstof {% firstof var1 var2 var3 %}",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2020-03-16T09:51:31.816Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "23",
+      "object_repr": "Frontend. What language of rules affect the style of HTML content?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\", \"Answer\", \"Difficulty level\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2020-03-16T09:53:13.269Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "22",
+      "object_repr": "Frontend. What purpose does JSON (JavaScript Object Notion) have?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\", \"Answer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2020-03-16T09:54:15.269Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "21",
+      "object_repr": "Acronym. The meaning of JSON is?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\", \"Answer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2020-03-16T09:55:26.153Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Acroynms",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2020-03-16T09:57:01.456Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "26",
+      "object_repr": "Truthy or Falsy.  appendChild() is an obsolete method of the JavaScript DOM.",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2020-03-16T09:58:18.261Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "14",
+      "object_repr": "Acronym B2B means?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2020-03-16T09:58:29.995Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "15",
+      "object_repr": "Acronym B2C means?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2020-03-16T09:58:38.579Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "13",
+      "object_repr": "Acronym ORM means?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2020-03-16T09:58:44.882Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "12",
+      "object_repr": "Acronym DOM means?",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2020-03-16T09:58:50.979Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "11",
+      "object_repr": "Acronym XML means?",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2020-03-16T09:58:57.434Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "10",
+      "object_repr": "Acronym HTTP means?",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2020-03-16T10:00:36.444Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "27",
+      "object_repr": "Frontend. XML (Extensible Markup Language) is a term that does what?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2020-03-16T10:01:27.580Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "28",
+      "object_repr": "Frontend. CDN (Content Delivery Network) is a group of servers spread out over many locations and widely used for delivering what type resource(s)?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2020-03-16T10:05:28.961Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "29",
+      "object_repr": "Backend. What is the purpose of an API (Application Programming Interface)?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2020-03-16T10:06:25.287Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "30",
+      "object_repr": "Backend. What are the four basic functions of CRUD?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2020-03-16T10:07:08.794Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "31",
+      "object_repr": "Backend. DOM (Document Object Model) is a programming API that defines the logical structure of documents and the way a document is accessed and manipulated for what two interface types?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2020-03-16T10:07:39.853Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "32",
+      "object_repr": "Backend. What two endpoints does FTP (File Transfer Protocol) affect?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2020-03-16T10:08:26.174Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "33",
+      "object_repr": "Backend. What mapping technique converts data between incompatible type systems in object-oriented programming languages",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2020-03-16T10:10:31.027Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "34",
+      "object_repr": "Backend. REGEX (REGular EXpression) is a set rules used to process what type data?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2020-03-16T10:11:37.038Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "35",
+      "object_repr": "Backend. Web services that conform to the REpresentational State Transfer (REST) software architectural style are called...",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2020-03-16T10:12:08.201Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "36",
+      "object_repr": "Backend. What the purpose of a URI (Uniform Resource Identifier)?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2020-03-16T10:12:37.137Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "37",
+      "object_repr": "Backend. WYSIWYG (wi-zee-wig) is What You See Is What You Get. But what exactly does it do?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2020-03-16T10:14:11.221Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Backend Development",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+      "action_time": "2020-03-16T10:17:24.666Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "38",
+      "object_repr": "Frontend.  What techniques are used to send data asynchronously to and from a server in the background without any changes to the web page for the user?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+      "action_time": "2020-03-16T10:28:40.980Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "39",
+      "object_repr": "Frontend. A CMS (content management system) is a software application or set of related programs that are used for what purpose?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+      "action_time": "2020-03-16T10:34:30.848Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "40",
+      "object_repr": "Frontend. What is the purpose of software application load testing?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+      "action_time": "2020-03-16T10:43:24.460Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "41",
+      "object_repr": "Truthy or Falsy. On the web, front-end developer code tells your browser how to do things.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+      "action_time": "2020-03-16T10:50:19.889Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "42",
+      "object_repr": "Frontend. What type web-based platform collects information from different sources into a single user interface and presents users with the most relevant information for their context.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+      "action_time": "2020-03-16T10:52:36.734Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "Front-End Development Terms",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+      "action_time": "2020-03-16T10:52:58.036Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Back-end Software Development",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+      "action_time": "2020-03-16T10:54:53.457Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Back-End Software Development",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+      "action_time": "2020-03-16T11:00:06.768Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "24",
+      "object_repr": "Code. What is the result of this Django template?\r\n\r\nfirstof {% firstof var1 var2 var3 %}",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+      "action_time": "2020-03-16T11:00:37.735Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "Code 'Splainin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+      "action_time": "2020-03-16T11:01:07.916Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "Front-End Development Terms",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+      "action_time": "2020-03-16T11:01:18.363Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Back-End Software Development",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+      "action_time": "2020-03-16T11:01:47.784Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Acroynms",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+      "action_time": "2020-03-16T11:02:09.851Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Truthy Falsy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+      "action_time": "2020-03-16T11:11:29.975Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "43",
+      "object_repr": "Code. <p>JavaScript strings can be written with double or single quotes.</p> returns what?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+      "action_time": "2020-03-16T11:17:42.850Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "44",
+      "object_repr": "Code. What is result of the command \"python3 -m venv venv\"?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+      "action_time": "2020-03-16T11:18:20.658Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "43",
+      "object_repr": "Code. \"<p>JavaScript strings can be written with double or single quotes.</p>\" returns what result?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+      "action_time": "2020-03-16T11:29:04.480Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "45",
+      "object_repr": "Code. What does the dot notation \"{{ project.title }}\" do in this code?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+      "action_time": "2020-03-16T11:42:38.593Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "46",
+      "object_repr": "Code. The CSS code \"transform: rotateY(180deg)\" does what?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+      "action_time": "2020-03-16T11:45:17.098Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "47",
+      "object_repr": "Code. What is the result of this CSS code \"backface-visibility: hidden;\"?",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+      "action_time": "2020-03-16T11:46:09.226Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "Code 'Splainin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+      "action_time": "2020-03-16T11:47:48.160Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "46",
+      "object_repr": "Code. The CSS code \"transform: rotateY(180deg)\" does what?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Answer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+      "action_time": "2020-03-16T12:26:07.487Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "15",
+      "object_repr": "Acronym. What does B2C mean?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+      "action_time": "2020-03-16T12:26:43.511Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "14",
+      "object_repr": "Acronym. What does B2B means?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+      "action_time": "2020-03-16T12:26:59.283Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "13",
+      "object_repr": "Acronym. What does ORM mean?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+      "action_time": "2020-03-16T12:27:11.054Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "14",
+      "object_repr": "Acronym. What does B2B mean?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+      "action_time": "2020-03-16T12:27:42.861Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "12",
+      "object_repr": "Acronym. The DOM means...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+      "action_time": "2020-03-16T12:28:10.325Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "11",
+      "object_repr": "Acronym. What is the meaning of XML?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+      "action_time": "2020-03-16T12:28:26.464Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "10",
+      "object_repr": "Acronym. What is the meaning of HTTP?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+      "action_time": "2020-03-16T12:28:43.794Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "9",
+      "object_repr": "Acronym. What is the meaning of CSS?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+      "action_time": "2020-03-16T12:29:09.835Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "8",
+      "object_repr": "Acronym. AJAX means...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+      "action_time": "2020-03-16T12:29:23.947Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "7",
+      "object_repr": "Acronym. OOP means...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+      "action_time": "2020-03-16T12:29:42.930Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "6",
+      "object_repr": "Acronym. SDK means...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+      "action_time": "2020-03-16T12:30:04.217Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "6",
+      "object_repr": "Acronym. SDK is short for...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+      "action_time": "2020-03-16T12:30:22.379Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "5",
+      "object_repr": "Acronym. API is short for...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+      "action_time": "2020-03-16T12:30:51.365Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "Acronym. UI/UX is short for...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+      "action_time": "2020-03-16T12:32:38.250Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "21",
+      "object_repr": "Acronym. JSON is short for...?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+      "action_time": "2020-03-16T12:33:11.597Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Acroynms",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+      "action_time": "2020-03-17T15:57:44.601Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "16",
+      "object_repr": "Truthy or Falsy. Technical debt (aka tech debt, code debt) is what you owe on your Momentum Learning coding tuition",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+      "action_time": "2020-03-17T15:58:51.487Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "37",
+      "object_repr": "Backend. WYSIWYG (wi-zee-wig) is What You See Is What You Get. But what exactly does it do?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Consec correct answers\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+      "action_time": "2020-03-17T16:05:39.706Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "48",
+      "object_repr": "Truthy or Falsy. A URL (Uniform Resource Locator) is a language for specifying addresses on the internet, or an address that identifies a particular file on the Internet, usually consisting of http, f",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+      "action_time": "2020-03-17T16:06:13.371Z",
+      "user": 2,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Truthy Falsy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Flashcards\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 126,
+    "fields": {
+      "action_time": "2020-03-17T16:25:05.448Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "34",
+      "object_repr": "Backend. REGEX (REGular EXpression) is a set of rules used to process what type data?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 127,
+    "fields": {
+      "action_time": "2020-03-17T16:27:26.265Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "32",
+      "object_repr": "Backend. What two endpoints does FTP (File Transfer Protocol) affect?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Answer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 128,
+    "fields": {
+      "action_time": "2020-03-17T16:28:42.519Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "36",
+      "object_repr": "Backend. What is the purpose of a URI (Uniform Resource Identifier)?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 129,
+    "fields": {
+      "action_time": "2020-03-17T16:31:12.613Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "29",
+      "object_repr": "Backend. What is the purpose of an API (Application Programming Interface)?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Answer\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 130,
+    "fields": {
+      "action_time": "2020-03-17T16:32:35.718Z",
+      "user": 2,
+      "content_type": 11,
+      "object_id": "37",
+      "object_repr": "Backend. The acronym WYSIWYG (wi-zee-wig) means, \"What You See Is What You Get.\" But what exactly does it do?",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Question\"]}}]"
+    }
+  },
+  {
+    "model": "registration.registrationprofile",
+    "pk": 1,
+    "fields": {
+      "user": 8,
+      "activation_key": "4b7b08d7317ff6bc1465dbee8a98139aa2cb8b17f05d728486c86011c674bc3e",
+      "activated": false
+    }
+  },
+  {
+    "model": "registration.registrationprofile",
+    "pk": 2,
+    "fields": {
+      "user": 9,
+      "activation_key": "ce8df8fb15cc359987614adb6b3121f50bf421d9409d0f726e83677e86a80294",
+      "activated": false
+    }
+  }
+]
