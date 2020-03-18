@@ -24,7 +24,7 @@ class DeckView(viewsets.ModelViewSet):
     """
     Handles routing for POST, PATCH, GET, DELETE
     """
-    queryset = Deck.objects.order_by('name')
+    queryset = Deck.objects.all()
     serializer_class = DeckSerializer
 
 
@@ -57,7 +57,8 @@ def flashcard_display(request, deck_slug, pk):
     # Turn the text content of deck name into a slug
     decks = Deck.objects
 
-    for deck in decks.all():
+    # for deck in decks.all():
+    for deck in decks.order_by(deck.name):
         if slugify(deck.name) == deck_slug:
             instance = deck
             break
