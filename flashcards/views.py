@@ -24,7 +24,7 @@ class DeckView(viewsets.ModelViewSet):
     """
     Handles routing for POST, PATCH, GET, DELETE
     """
-    queryset = Deck.objects.all()
+    queryset = Deck.objects.order_by('name')
     serializer_class = DeckSerializer
 
 
