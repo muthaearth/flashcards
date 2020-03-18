@@ -58,7 +58,7 @@ def flashcard_display(request, deck_slug, pk):
     decks = Deck.objects
 
     # for deck in decks.all():
-    for deck in decks.order_by(deck.name):
+    for deck in decks.order_by(deck):
         if slugify(deck.name) == deck_slug:
             instance = deck
             break
