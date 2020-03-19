@@ -44,15 +44,7 @@ class FlashCardView(viewsets.ModelViewSet):
 def home(request):
     if request.method == 'GET':
 
-        decks = Deck.objects.order_by('name')
-        sort_deck = sorted(decks.all())
-
-
-#         group_members = User.objects.order_by("first_name", "last_name")
-
-
-# sorted_group_members = sorted(group_members.all(
-# ), reverse=True, key=lambda a: a.some_function_returning_the_user_group_of_each_user())
+        decks = Deck.objects.all().order_by('name')
 
         context = {
             'user': request.user,
@@ -64,7 +56,6 @@ def home(request):
 def flashcard_display(request, deck_slug, pk):
     # Turn the text content of deck name into a slug
     decks = Deck.objects
-
     # for deck in decks.all():
     for deck in decks.all():
         if slugify(deck.name) == deck_slug:
