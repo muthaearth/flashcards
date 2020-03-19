@@ -25,7 +25,6 @@ class FlashCardManager(models.Manager):
         return deck
 
     def get_cards_to_study(self, user, deck_id, days):
-        ##import ipdb; ipdb.set_trace()
         next_due_date = timezone.now() + timedelta(days=days)
         cards = FlashCard.objects.filter(deck__id=deck_id, deck__owner=user,
                                          next_due_date__lte=next_due_date)
@@ -34,7 +33,6 @@ class FlashCardManager(models.Manager):
 
 class FlashCard(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    # deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
     question = models.TextField(max_length=255, blank=True, null=True)
     answer = models.TextField(max_length=255, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -55,7 +53,7 @@ class FlashCard(models.Model):
             difficulty_level (int) - answer rating (0=worst, 5=best)
 
         Returns:
-            next_due_date,difficulty_level,consec_correct_answers (tuple) - information
+            next_due_date,difficulty_level,consec_correct_answers (tuple) - info
                 to update FlashCard data
         """
 
@@ -83,7 +81,6 @@ class FlashCard(models.Model):
             self.next_due_date = result[0]
             self.difficulty_level = result[1]
             self.consec_correct_answers = result[2]
-        # Call the "real" save() method.
         super(FlashCard, self).save(*args, **kwargs)
 
 
@@ -103,11 +100,11 @@ class Deck(models.Model):
 
     @property
     def slug(self):
-        """Returns a slugged version of the name of the deck (e.g., Deck Name: Truthy Falsy, Slug: truthy-falsy)"""
+        """Return slugged version of name of deck"""
         return slugify(self.name)
 
     def random_card(self):
-        """Return a random primary key of a flashcard in current deck."""
+        """Return random primary key of flashcard in current deck."""
         card_pk = random.choice(self.flashcards.all()).pk
         card = self.flashcards.get(pk=card_pk)
         if card.consec_correct_answers == 1 or card.consec_correct_answers == -1:
