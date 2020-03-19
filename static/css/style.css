@@ -20,7 +20,7 @@ _______________________________________________________ */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 75px;
   background-color: whitesmoke;
 }
 
@@ -58,6 +58,14 @@ ________________________________________________ */
   font-family: Montserrat;
   text-align: center;
   margin: 50px 0 30px;
+}
+
+.home p {
+  font-size: 24px;
+  color: grey;
+  text-align: left;
+  max-width: 700px;
+  width: 95%;
 }
 
 .flex-grid {
