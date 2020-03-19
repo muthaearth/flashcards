@@ -63,9 +63,13 @@ ________________________________________________ */
 .home h3 {
   font-size: 20px;
   font-family: Montserrat;
-  text-align: center;
-  margin: 50px 0 30px;
   color: grey;
+  text-align: left;
+  max-width: 700px;
+  width: 95%;
+
+  /* text-align: center;
+  margin: 50px 0 30px; */
   /* justify-content: center; */
   /* max-width: 700px; */
   /* width: 95%; */
