@@ -12,6 +12,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
+from django.db.models import Count
 import json
 import random
 
@@ -122,10 +123,7 @@ def correct_score(request, deck_slug, pk):
             break
 
     # Correct Score
-    card = instance.flashcards.get(pk=pk)
-    card.consec_correct_answers = 1
-    card.objects.filter(consec_correct_answers=1).count()
-    card.save()
+    card = FlashCard.objects.annotate(consec_correct_answers=Count('1'))
 
     context = {
         'deck': instance,
