@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="flashcard-display">
+    <h1 class="title">My Flashcards Summary</h1>
+
+
+        <div class="score-area">
+        <p>Here's how your scored:</p>
+        <div class="buttons-area">
+            {% comment %} total correct answers {% endcomment %}
+            <a href="{% url '#' deck.slug card.pk %}" class="correct_score">Total Correct Answers</a>
+        
+            {% comment %} total incorrect answers {% endcomment %}
+            <a href="{% url '#' deck.slug card.pk %}" class="incorrect_score">Total Incorrect Answers</a>
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}
