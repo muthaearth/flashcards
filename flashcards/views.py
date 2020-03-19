@@ -53,10 +53,21 @@ def home(request):
         return render(request, 'flashcards/index.html', context)
 
 
+def deck_sort(t):
+    return t[1]
+
+
+L = [("Acronyms"), ("Back-End Software Development"),
+     ("Code 'Splainin"), ("Front-End Software Development"), ("Truthy Falsy"), ]
+L.sort(key=dec_sort)
+print(L)
+
+
 def flashcard_display(request, deck_slug, pk):
     # Turn the text content of deck name into a slug
     decks = Deck.objects
 
+    # for deck in decks.all():
     for deck in decks.all():
         if slugify(deck.name) == deck_slug:
             instance = deck

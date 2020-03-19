@@ -7,7 +7,7 @@ urlpatterns = [
     # path('', include(router.urls)),
     path('', views.home, name="home"),
     #     accounts logout
-    #     path('accounts/', include('registration.backends.simple.urls')),
+    #     path('accounts/logout', include('registration.backends.simple.urls')),
     path('<slug:deck_slug>/<int:pk>/',
          views.flashcard_display, name='flashcard_display'),
     path('<slug:deck_slug>/<int:pk>/correct/',
