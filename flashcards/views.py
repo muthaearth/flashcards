@@ -44,7 +44,15 @@ class FlashCardView(viewsets.ModelViewSet):
 def home(request):
     if request.method == 'GET':
 
-        decks = Deck.objects.all()
+        decks = Deck.objects.order_by('name')
+        sort_deck = sorted(decks.all())
+
+
+#         group_members = User.objects.order_by("first_name", "last_name")
+
+
+# sorted_group_members = sorted(group_members.all(
+# ), reverse=True, key=lambda a: a.some_function_returning_the_user_group_of_each_user())
 
         context = {
             'user': request.user,

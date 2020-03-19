@@ -2,11 +2,11 @@
 
 {% block content %}
 <div class="flashcard-display">
-    <h1 class="title">My Flashcards Summary</h1>
+    <h1 class="title">My Flashcards Scorecard</h1>
 
 
         <div class="score-area">
-        <p>Here's how your scored:</p>
+        <p>Here's how you scored:</p>
         <div class="buttons-area">
             {% comment %} total correct answers {% endcomment %}
             <a href="{% url '#' deck.slug card.pk %}" class="correct_score">Total Correct Answers</a>
