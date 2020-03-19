@@ -111,3 +111,24 @@ def incorrect_answer(request, deck_slug, pk):
         'card': card,
     }
     return render(request, 'flashcards/incorrect_answer.html', context)
+
+
+def correct_score(request, deck_slug, pk):
+    decks = Deck.objects
+
+    for deck in decks.all():
+        if slugify(deck.name) == deck_slug:
+            instance = deck
+            break
+
+    # Correct Score
+    card = instance.flashcards.get(pk=pk)
+    card.consec_correct_answers = 1
+    card.objects.filter(consec_correct_answers=1).count()
+    card.save()
+
+    context = {
+        'deck': instance,
+        'card': card,
+    }
+    return render(request, 'flashcards/scorecard.html', context)

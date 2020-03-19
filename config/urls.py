@@ -6,15 +6,11 @@ flashcards URL configuration
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
-# from flashcards import views as flashcard_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('flashcards.urls')),
-    # path('', flashcard_views.home, name='home'),
-    # path('api/', include('flashcards.urls')),
-    # path('new_card/', flashcard_views.new_card, name='new_card'),
     path('accounts/', include('registration.backends.default.urls')),
 ]
 
