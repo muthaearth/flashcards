@@ -57,7 +57,6 @@ def flashcard_display(request, deck_slug, pk):
     # Turn the text content of deck name into a slug
     decks = Deck.objects
 
-    # for deck in decks.all():
     for deck in decks.all():
         if slugify(deck.name) == deck_slug:
             instance = deck
@@ -112,21 +111,3 @@ def incorrect_answer(request, deck_slug, pk):
         'card': card,
     }
     return render(request, 'flashcards/incorrect_answer.html', context)
-
-
-# def scorecard(request):
-#     test this
-#     queryset = FlashCard.objects.all()
-    # Scorecard is all values in consec_correct_answers matching for
-    # This sum should display when the user ends their study.
-
-    # queryset = FlashCard.objects.filter(owner=request.user.id)
-    # queryset = FlashCard.objects.filter(owner=request.user)
-    # queryset = FlashCard.objects.filter(owner=user)
-
-    # for card in cards.all():
-    # card = instance.flashcards.get(pk=pk)
-
-    # card.consec_correct_answers = 1
-    # card.save()
-    # return render(request, 'flashcards/scorecard.html', context)
