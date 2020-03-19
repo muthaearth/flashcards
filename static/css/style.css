@@ -63,6 +63,7 @@ ________________________________________________ */
 .home h3 {
   font-size: 20px;
   color: grey;
+  justify-content: center;
   text-align: left;
   max-width: 700px;
   width: 95%;
