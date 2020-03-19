@@ -20,7 +20,7 @@ _______________________________________________________ */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 50px;
   background-color: whitesmoke;
 }
 
@@ -28,32 +28,22 @@ _______________________________________________________ */
   font-size: 32px;
   margin-left: 50px;
   font-weight: 600;
-  margin-right: 50px;
 }
 
 .navbar .nav-links {
   display: flex;
   justify-content: center;
-  align-items: right;
+  align-items: center;
   list-style: none;
-  margin-right: 600px;
-}
-
-.home h1 {
-  font-size: 50px;
-  font-family: Montserrat;
-  text-align: center;
-  margin: 50px 0 30px;
+  margin-right: 20px;
 }
 
 .navbar .nav-links a {
   color: black;
-  text-align: left;
   padding: 15px;
-  /* transition: all 0.2s ease; */
+  transition: all 0.2s ease;
   font-size: 24px;
   font-weight: 400;
-  margin-left: 50px;
 }
 
 .navbar .nav-links a:hover {
