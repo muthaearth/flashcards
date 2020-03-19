@@ -114,19 +114,19 @@ def incorrect_answer(request, deck_slug, pk):
     return render(request, 'flashcards/incorrect_answer.html', context)
 
 
-def correct_score(request, deck_slug, pk):
-    decks = Deck.objects
+# def correct_score(request, deck_slug, pk):
+#     decks = Deck.objects
 
-    for deck in decks.all():
-        if slugify(deck.name) == deck_slug:
-            instance = deck
-            break
+#     for deck in decks.all():
+#         if slugify(deck.name) == deck_slug:
+#             instance = deck
+#             break
 
-    # Correct Score
-    card = FlashCard.objects.annotate(consec_correct_answers=Count('1'))
+#     # Correct Score
+#     card = FlashCard.objects.annotate(consec_correct_answers=Count('1'))
 
-    context = {
-        'deck': instance,
-        'card': card,
-    }
-    return render(request, 'flashcards/scorecard.html', context)
+#     context = {
+#         'deck': instance,
+#         'card': card,
+#     }
+#     return render(request, 'flashcards/scorecard.html', context)
